@@ -12,14 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2021_03_14_041713) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "dish_reviews", force: :cascade do |t|
     t.string "dishReviewId"
     t.string "userId"
     t.string "dishName"
     t.text "review"
     t.integer "rating"
-    t.integer "dish_id"
-    t.integer "user_id"
+    t.bigint "dish_id"
+    t.bigint "user_id"
     t.index ["dish_id"], name: "index_dish_reviews_on_dish_id"
     t.index ["user_id"], name: "index_dish_reviews_on_user_id"
   end
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
     t.string "restaurantName"
     t.float "price"
     t.text "description"
-    t.integer "restaurant_id"
+    t.bigint "restaurant_id"
     t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 
@@ -40,8 +43,8 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
     t.string "restaurantName"
     t.text "review"
     t.integer "rating"
-    t.integer "restaurant_id"
-    t.integer "user_id"
+    t.bigint "restaurant_id"
+    t.bigint "user_id"
     t.index ["restaurant_id"], name: "index_restaurant_reviews_on_restaurant_id"
     t.index ["user_id"], name: "index_restaurant_reviews_on_user_id"
   end

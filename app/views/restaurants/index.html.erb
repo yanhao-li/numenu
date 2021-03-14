@@ -1,12 +1,10 @@
-<!-- <h1>This will be the restaurants listing page</h1> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="./resources/whitney-font/style.css"/>
-    <link rel="stylesheet" href="../../assets/stylesheets/application.css">
+    <link rel="stylesheet" href="./home.css">
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
@@ -17,7 +15,7 @@
 		<span id="back-arrow"><</span>
 		<span id="title">Numenu</span>
 		<span id="user-icon">
-			<img id="user-icon-img" src="./Sample_User_Icon.png">
+			<img id="user-icon-img" src="../../images/Sample_User_Icon.png">
 		</span>
 	</div>
 
@@ -35,6 +33,21 @@
 		  <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
 		  <%= link_to 'Cancel', movies_path, :class => 'btn btn-secondary' %>
 		<% end %> -->
+	</div>
+	<div id="restaurant">
+		<div id="restaurant-img">
+			<img src="food_filler.jpeg">
+		</div>
+		<div id="restaurant-info">
+			<span id="description">
+				<div id="name" class="text">Example Name</div>
+				<div id="type">Seafood</div>
+			</span>
+			<span id="star">
+				<img id="star" src="../../images/star_icon.png">
+			</span>
+			<span id="score" class="text">Meal Score: 3.8</span>
+		</div>
 	</div>
 
 </body>

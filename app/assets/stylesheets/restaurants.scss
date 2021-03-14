@@ -79,5 +79,70 @@ body{
 
 #search-box {
 	padding-top: 21px;
-	
+
+}
+
+#restaurant {
+	margin-left: 2.5%;
+	margin-top: 15px;
+	width: 95%;
+	height: 140px;
+}
+
+#restaurant-img {
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+}
+
+#restaurant-img img {
+	width: 100%;
+}
+
+#restaurant-info {
+	width: 100%;
+	height: 32px;
+	margin-top: 8px;
+}
+
+.text {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 17px;
+	/* identical to box height */
+
+	display: flex;
+	align-items: center;
+
+	color: #000000;
+}
+
+#name {
+	float: left;
+}
+
+#score {
+	display: inline-block;
+	float: right;
+}
+
+#description {
+	float: left;
+	display: inline-block;.
+}
+
+#type {
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 15px;
+
+	color: #828282;
+
+}
+
+#star {
+	float: right;
+	display: inline-block;
+	height: 17px;
+	width: 17px;
 }

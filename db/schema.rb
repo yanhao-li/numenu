@@ -16,9 +16,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
   enable_extension "plpgsql"
 
   create_table "dish_reviews", force: :cascade do |t|
-    t.string "dishReviewId"
-    t.string "userId"
-    t.string "dishName"
+    t.string "dish_review_id"
     t.text "review"
     t.integer "rating"
     t.bigint "dish_id"
@@ -28,9 +26,8 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
   end
 
   create_table "dishes", force: :cascade do |t|
-    t.string "dishId"
-    t.string "dishName"
-    t.string "restaurantName"
+    t.string "dish_id"
+    t.string "dish_name"
     t.float "price"
     t.text "description"
     t.bigint "restaurant_id"
@@ -38,9 +35,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
   end
 
   create_table "restaurant_reviews", force: :cascade do |t|
-    t.string "restaurantReviewId"
-    t.string "userId"
-    t.string "restaurantName"
+    t.string "restaurant_review_id"
     t.text "review"
     t.integer "rating"
     t.bigint "restaurant_id"
@@ -50,27 +45,27 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.string "restaurantId"
+    t.string "restaurant_id"
     t.string "name"
     t.float "latitude"
     t.float "longitude"
-    t.string "phoneNumber"
-    t.string "streetName"
-    t.string "streetNumber"
+    t.string "phone_number"
+    t.string "street_name"
+    t.string "street_number"
     t.string "city"
     t.string "state"
-    t.string "zipCode"
+    t.string "zip_code"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "userId"
-    t.string "phoneNumber"
-    t.string "firstName"
-    t.string "lastName"
+    t.string "user_id"
+    t.string "phone_number"
+    t.string "first_name"
+    t.string "last_name"
     t.string "city"
     t.string "state"
-    t.string "zipCode"
-    t.string "emailAddress"
+    t.string "zip_code"
+    t.string "email_address"
     t.string "password"
   end
 

@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
     t.string "dish_review_id"
     t.text "review"
     t.integer "rating"
-    t.bigint "dish_id"
-    t.bigint "user_id"
-    t.index ["dish_id"], name: "index_dish_reviews_on_dish_id"
-    t.index ["user_id"], name: "index_dish_reviews_on_user_id"
+    t.bigint "dishes_id"
+    t.bigint "users_id"
+    t.index ["dishes_id"], name: "index_dish_reviews_on_dishes_id"
+    t.index ["users_id"], name: "index_dish_reviews_on_users_id"
   end
 
   create_table "dishes", force: :cascade do |t|
@@ -30,18 +30,18 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
     t.string "dish_name"
     t.float "price"
     t.text "description"
-    t.bigint "restaurant_id"
-    t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
+    t.bigint "restaurants_id"
+    t.index ["restaurants_id"], name: "index_dishes_on_restaurants_id"
   end
 
   create_table "restaurant_reviews", force: :cascade do |t|
     t.string "restaurant_review_id"
     t.text "review"
     t.integer "rating"
-    t.bigint "restaurant_id"
-    t.bigint "user_id"
-    t.index ["restaurant_id"], name: "index_restaurant_reviews_on_restaurant_id"
-    t.index ["user_id"], name: "index_restaurant_reviews_on_user_id"
+    t.bigint "restaurantes_id"
+    t.bigint "users_id"
+    t.index ["restaurantes_id"], name: "index_restaurant_reviews_on_restaurantes_id"
+    t.index ["users_id"], name: "index_restaurant_reviews_on_users_id"
   end
 
   create_table "restaurants", force: :cascade do |t|

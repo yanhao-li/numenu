@@ -5,7 +5,7 @@ class CreateDish < ActiveRecord::Migration[6.1]
       t.string :dish_name
       t.float :price
       t.text :description
-      t.references 'restaurant'
+      t.references :restaurants
     end
   end
 

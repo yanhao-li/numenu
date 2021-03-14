@@ -4,8 +4,8 @@ class CreateRestaurantReview < ActiveRecord::Migration[6.1]
       t.string :restaurant_review_id
       t.text :review
       t.integer :rating
-      t.references 'restaurant'
-      t.references 'user'
+      t.references :restaurantes
+      t.references :users
     end
   end
 

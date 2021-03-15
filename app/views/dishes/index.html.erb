@@ -20,5 +20,6 @@ Menu items for <%= @restaurant.name %>
 		<span>
 			<%= r.description %>
 		</span>
+		<span><%= link_to 'See reviews', dish_reviews_path({:dish => r, :restaurant => @restaurant.restaurant_id}), :class => 'btn btn-primary' %></span>
 	</div>
 <% end %>

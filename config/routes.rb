@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   post "/restaurant_reviews", to: "restaurant_reviews#create"
   get "/home", to: "home#index"
   get "/dishes", to: "dishes#index"
+  get "/dish_reviews", to: "dish_reviews#index"
+  get "dish_reviews/new", to: "dish_reviews#new"
+  post "/dish_reviews", to: "dish_reviews#create"
 end

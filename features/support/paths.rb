@@ -43,6 +43,11 @@ module NavigationHelpers
     id = Restaurant.find_by(name: $1.tr('"', '')).id
     '/dishes.%d' % id
 
+  when /^the write dish review page for (.*) (.*)/i
+    restaurant_id = Restaurant.find_by(name: $1.tr('"', '')).id
+    dish_id = Dish.find_by(dish_name: $2.tr('"', '')).id
+    "/dish_reviews/new?dish=#{dish_id}&restaurant=#{restaurant_id}"
+
     else
       begin
         page_name =~ /^the (.*) page$/

@@ -6,4 +6,17 @@
 	</span>
 </div>
 
-<%= link_to 'View Restaurants', restaurants_path, :class => 'btn btn-primary' %>
+</br>
+Reviews for <%= @restaurant.name %>
+</br>
+
+<% @reviews.each do |r| %>
+	<div>
+		<span>
+			r.rating
+		</span>
+		<span>
+			r.review
+		</span>
+	</div>
+<% end %>

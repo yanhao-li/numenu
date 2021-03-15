@@ -1,5 +1,5 @@
 <div id="banner">
-	<span id="back-arrow"><</span>
+	<span id="back-arrow"><%= link_to '<', home_path, :class => 'btn btn-primary' %></span>
 	<span id="title">Numenu</span>
 	<span id="user-icon">
 		<img id="user-icon-img" src="/images/Sample_User_Icon.png">
@@ -14,9 +14,10 @@
 			<img src="/images/food_filler.jpeg">
 		</div>
 		<div id="restaurant-info">
-			<span id="description">
-				<div id="name" class="text"><%= link_to r.name, restaurant_review_path(r), :class => 'btn btn-primary' %></div>
+			<span id="description" class="text">
+				<%= link_to r.name, dishes_path(r), :class => 'btn btn-primary' %></span>
 			</span>
+			<span id="reviews" class="text"><%= link_to "View reviews for " + r.name, restaurant_reviews_path(r), :class => 'btn btn-primary' %></span>
 			<span id="star">
 				<img id="star" src="/images/star_icon.png">
 			</span>

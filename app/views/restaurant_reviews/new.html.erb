@@ -1,0 +1,19 @@
+<div id="banner">
+	<span id="back-arrow"><%= link_to '<', restaurant_reviews_path(@restaurant), :class => 'btn btn-secondary' %></span>
+	<span id="title">Numenu</span>
+	<span id="user-icon">
+		<img id="user-icon-img" src="/images/Sample_User_Icon.png">
+	</span>
+</div>
+
+<h2>Write Review For <%= @restaurant.name %></h2>
+
+<%= form_tag restaurant_reviews_path(@restaurant), :class => 'form' do %>
+  <%= label :restaurant_review, :review, 'Review', :class => 'col-form-label' %>
+  <%= text_field :restaurant_review, :review, :class => 'form-control'  %>
+  <%= label :restaurant_review, :rating, 'Rating', :class => 'col-form-label' %>
+  <%= select :restaurant_review, :rating, [1,2,3,4,5], {}, {:class => 'form-control col-1'} %>
+  <br/>
+  <%= submit_tag 'Save', :class => 'btn btn-primary' %>
+  <%= link_to 'Cancel', restaurant_reviews_path(@restaurant), :class => 'btn btn-secondary' %>
+<% end %>

@@ -1,0 +1,25 @@
+<div id="banner">
+	<span id="back-arrow"><</span>
+	<span id="title">Numenu</span>
+	<span id="user-icon">
+		<img id="user-icon-img" src="~/app/assets/images/Sample_User_Icon.png">
+	</span>
+</div>
+
+<%= link_to 'Back to Restaurants', restaurants_path, :class => 'btn btn-primary' %>
+
+</br>
+Menu items for <%= @restaurant.name %>
+</br>
+
+<% @dishes.each do |r| %>
+	<div>
+		<span>
+			<%= r.dish_name %>
+		</span>
+		<span>
+			<%= r.description %>
+		</span>
+		<span><%= link_to 'See reviews', dish_reviews_path({:dish => r, :restaurant => @restaurant.restaurant_id}), :class => 'btn btn-primary' %></span>
+	</div>
+<% end %>

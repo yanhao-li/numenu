@@ -70,7 +70,7 @@ dishes = [
 		:dish_id => '4', :price => 8.99, :description => ''
 	},
 	{
-		:dish_id => '5', :price => 7.99, :description => ''
+		:dish_id => '5', :dish_name => "tacos", :price => 7.99, :description => 'tasty tasty tacos', :restaurant_id => '1'
 	},
 	{
 		:dish_id => '6', :price => 10.90, :description => 'corn chips topped with black beans.'

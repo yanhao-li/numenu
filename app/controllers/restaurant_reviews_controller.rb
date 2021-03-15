@@ -1,29 +1,21 @@
 class RestaurantReviewsController < ApplicationController
 	def index
-		id = params[:format]
-		@restaurant = nil
-		@reviews = nil
-		if id
-			@restaurant = Restaurant.find(id)
-			@reviews = @restaurant.restaurant_reviews
-		end
+		@restaurant = Restaurant.find(params[:id])
+		@reviews = @restaurant.restaurant_reviews
 	end
 
 	def new
-		id = params[:format]
-		@restaurant = nil
-		if id
-			@restaurant = Restaurant.find(id)
-		end
+		@restaurant = Restaurant.find(params[:id])
 	end
 
 	def create
-		restaurant_id = params[:format]
 		inputs = params[:restaurant_review]
-		review = inputs[:review]
-		rating = inputs[:rating]
-	    @review = RestaurantReview.create!(review: review, rating: rating, restaurant_id: restaurant_id)
-	    redirect_to restaurant_reviews_path(restaurant_id)
-	    flash[:notice] = "Review was successfully submitted."
+		RestaurantReview.create!(
+			review: inputs[:review],
+			rating: inputs[:rating],
+			restaurant_id: params[:id]
+		)
+		redirect_to restaurant_reviews_path(restaurant_id)
+		flash[:notice] = "Review was successfully submitted."
 	end
 end

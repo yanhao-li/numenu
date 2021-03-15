@@ -1,5 +1,5 @@
 <div id="banner">
-	<span id="back-arrow"><%= link_to '<', home_path, :class => 'btn btn-primary' %></span>
+	<span id="back-arrow"><%= link_to '<', root_path, :class => 'btn btn-primary' %></span>
 	<span id="title">Numenu</span>
 	<span id="user-icon">
 		<%= image_tag "Sample_User_Icon.png", style: 'height:100%;width:auto;' %>
@@ -15,9 +15,11 @@
 		</div>
 		<div id="restaurant-info">
 			<span id="description" class="text">
-				<%= link_to restaurant.name, restaurant_path(restaurant), :class => 'btn btn-primary' %></span>
+				<%= link_to restaurant.name, restaurant_path(restaurant), :class => 'btn btn-primary' %>
 			</span>
-			<span id="reviews" class="text"><%= link_to "View reviews for " + restaurant.name, restaurant_reviews_path(restaurant), :class => 'btn btn-primary' %></span>
+			<span id="reviews" class="text">
+				<%= link_to "View reviews for " + restaurant.name, restaurant_reviews_path(restaurant), :class => 'btn btn-primary' %>
+			</span>
 			<span id="star">
 				⭐️
 			</span>

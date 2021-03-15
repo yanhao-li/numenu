@@ -1,9 +1,15 @@
 class RestaurantReviewsController < ApplicationController
 	def index
-		@restaurant = 
+		id = params[:format]
+		@restaurant = nil
+		@reviews = nil
+		if id
+			@restaurant = Restaurant.find(id)
+			@reviews = @restaurant.restaurantReviews
+		end
+
 	end
 
 	def new
-		@restaurant = 
 	end
 end

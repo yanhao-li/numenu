@@ -15,9 +15,9 @@
 		</div>
 		<div id="restaurant-info">
 			<span id="description" class="text">
-				<%= r.name %>
+				<%= link_to r.name, dishes_path(r), :class => 'btn btn-primary' %></span>
 			</span>
-			<span class="text"><%= link_to "View reviews for " + r.name, restaurant_reviews_path(r), :class => 'btn btn-primary' %></span>
+			<span id="reviews" class="text"><%= link_to "View reviews for " + r.name, restaurant_reviews_path(r), :class => 'btn btn-primary' %></span>
 			<span id="star">
 				<img id="star" src="/images/star_icon.png">
 			</span>

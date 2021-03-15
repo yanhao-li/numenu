@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_041713) do
+ActiveRecord::Schema.define(version: 2021_03_15_233614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "dish_reviews", force: :cascade do |t|
-    t.string "dish_review_id"
     t.text "review"
     t.integer "rating"
     t.bigint "dish_id"
@@ -26,7 +25,6 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
   end
 
   create_table "dishes", force: :cascade do |t|
-    t.string "dish_id"
     t.string "dish_name"
     t.float "price"
     t.text "description"
@@ -35,7 +33,6 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
   end
 
   create_table "restaurant_reviews", force: :cascade do |t|
-    t.string "restaurant_review_id"
     t.text "review"
     t.integer "rating"
     t.bigint "restaurant_id"
@@ -45,7 +42,6 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.string "restaurant_id"
     t.string "name"
     t.float "latitude"
     t.float "longitude"
@@ -58,7 +54,6 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user_id"
     t.string "phone_number"
     t.string "first_name"
     t.string "last_name"

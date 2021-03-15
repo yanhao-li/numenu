@@ -33,20 +33,23 @@ module NavigationHelpers
     #   id = Movie.find_by(title: $1.tr('"', '')).id
     #   '/search_directors.%d' % id
 
-  when /the restaurants page/ then '/restaurants'
+  when /the restaurants page/
+    restaurants_path
 
   when /^the write review page for (.*)/i
-    id = Restaurant.find_by(name: $1.tr('"', '')).id
-    '/restaurant_reviews/new.%d' % id
+    new_restaurant_reviews_path(Restaurant.find_by(name: $1).id)
+    # '/restaurant_reviews/new.%d' % id
 
   when /^the menu page for (.*)/i
-    id = Restaurant.find_by(name: $1.tr('"', '')).id
-    '/dishes.%d' % id
+    id = Restaurant.find_by(name: $1).id
+    restaurant_path(id)
+    # '/restaurants/%d' % id
 
   when /^the write dish review page for (.*) (.*)/i
-    restaurant_id = Restaurant.find_by(name: $1.tr('"', '')).id
-    dish_id = Dish.find_by(dish_name: $2.tr('"', '')).id
-    "/dish_reviews/new?dish=#{dish_id}&restaurant=#{restaurant_id}"
+    # restaurant_id = Restaurant.find_by(name: $1).id
+    dish_id = Dish.find_by(dish_name: $2).id
+    new_dish_reviews_path(dish_id)
+    # "/dish_reviews/new?dish=#{dish_id}&restaurant=#{restaurant_id}"
 
     else
       begin

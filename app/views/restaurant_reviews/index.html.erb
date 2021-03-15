@@ -13,12 +13,12 @@ Reviews for <%= @restaurant.name %>
 <% @reviews.each do |r| %>
 	<div>
 		<span>
-			r.rating
+			<%= r.rating %>
 		</span>
 		<span>
-			r.review
+			<%= r.review %>
 		</span>
 	</div>
 <% end %>
 
-<%= link_to 'Write Review', restaurant_reviews_path(@restaurant.restaurantId), :class => 'btn btn-primary' %>
+<%= link_to 'Write Review', restaurant_reviews_new_path(@restaurant.restaurant_id), :class => 'btn btn-primary' %>

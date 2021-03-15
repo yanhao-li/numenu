@@ -15,13 +15,13 @@
 		</div>
 		<div id="restaurant-info">
 			<span id="description">
-				<div id="name" class="text"><%= link_to r.name, restaurant_review_path(r), :class => 'btn btn-primary' %></div>
+				<div id="name" class="text"><%= r.name %></div>
 			</span>
 			<span id="star">
 				<img id="star" src="/images/star_icon.png">
 			</span>
 			<span id="score" class="text">Meal Score: 3.8</span>
-			<%= link_to 'View Restaurant Reviews', restaurant_reviews_path, :class => 'btn btn-primary' %>
+			<%= link_to r.name, restaurant_reviews_path(r), :class => 'btn btn-primary' %>
 		</div>
 	</div>
 <% end %>

@@ -5,7 +5,7 @@ class RestaurantReviewsController < ApplicationController
 		@reviews = nil
 		if id
 			@restaurant = Restaurant.find(id)
-			@reviews = @restaurant.restaurantReviews
+			@reviews = @restaurant.restaurant_reviews
 		end
 	end
 

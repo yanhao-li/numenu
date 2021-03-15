@@ -1,5 +1,5 @@
 <div id="banner">
-	<span id="back-arrow"><</span>
+	<span id="back-arrow"><%= link_to '<', restaurant_reviews_path(@restaurant), :class => 'btn btn-secondary' %></span>
 	<span id="title">Numenu</span>
 	<span id="user-icon">
 		<img id="user-icon-img" src="/images/Sample_User_Icon.png">
@@ -15,5 +15,5 @@
   <%= select :restaurant_review, :rating, [1,2,3,4,5], {}, {:class => 'form-control col-1'} %>
   <br/>
   <%= submit_tag 'Save', :class => 'btn btn-primary' %>
-  <%= link_to 'Cancel', restaurants_path, :class => 'btn btn-secondary' %>
+  <%= link_to 'Cancel', restaurant_reviews_path(@restaurant), :class => 'btn btn-secondary' %>
 <% end %>

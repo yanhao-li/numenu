@@ -2,7 +2,7 @@
 	<span id="back-arrow"><%= link_to '<', home_path, :class => 'btn btn-primary' %></span>
 	<span id="title">Numenu</span>
 	<span id="user-icon">
-		<img id="user-icon-img" src="/images/Sample_User_Icon.png">
+		<%= image_tag "Sample_User_Icon.png", style: 'height:100%;width:auto;' %>
 	</span>
 </div>
 
@@ -11,7 +11,7 @@
 <% @restaurants.each do |r| %>
 	<div id="restaurant">
 		<div id="restaurant-img">
-			<img src="/images/food_filler.jpeg">
+			<%= image_tag "food_filler.jpeg", style: 'height:100%;width:auto;' %>
 		</div>
 		<div id="restaurant-info">
 			<span id="description" class="text">
@@ -19,7 +19,7 @@
 			</span>
 			<span id="reviews" class="text"><%= link_to "View reviews for " + r.name, restaurant_reviews_path(r), :class => 'btn btn-primary' %></span>
 			<span id="star">
-				<img id="star" src="/images/star_icon.png">
+				⭐️
 			</span>
 			<span id="score" class="text">Meal Score: 3.8</span>
 		</div>

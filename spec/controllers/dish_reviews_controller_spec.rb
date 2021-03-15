@@ -1,6 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-
-describe DishReviewsController do
-
-end
+  RSpec.describe DishReviewsController, type: :controller do
+    pending "add some examples to (or delete) #{__FILE__}"
+  end

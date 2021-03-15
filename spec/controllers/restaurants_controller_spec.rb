@@ -1,11 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe RestaurantsController do
-  
-  describe 'GET index' do
-    it 'assigns @restaurants'
-      restaurant = Restaurant.create
-      expect(assigns(:restaurants)).to eq([restaurant])
-    end
-
-end
+  RSpec.describe RestaurantsController, type: :controller do
+ 	pending "add some examples to (or delete) #{__FILE__}"
+  end

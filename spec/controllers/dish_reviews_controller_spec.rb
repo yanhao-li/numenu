@@ -1,3 +1,42 @@
+require 'spec_helper'
+
+if RUBY_VERSION>='2.6.0'
+  if Rails.version < '5'
+    class ActionController::TestResponse < ActionDispatch::TestResponse
+      def recycle!
+        # hack to avoid MonitorMixin double-initialize error:
+        @mon_mutex_owner_object_id = nil
+        @mon_mutex = nil
+        initialize
+      end
+    end
+  else
+    puts "Monkeypatch for ActionController::TestResponse no longer needed"
+  end
+end
+
+
 describe DishReviewsController do
   
+  describe 'index' do
+    it 'should render all of the dish reviews' do
+      get :index
+      expect(response).to render_template('index')
+    end
+  end
+  
+  describe 'new' do
+    it 'should render "new" template' do
+      get :new
+      expect(response).to render_template('new')
+    end
+  end
+  
+  describe 'create' do
+    # https://stackoverflow.com/questions/10548745/what-is-the-proper-way-to-test-create-controller-actions
+    it 'should create a new movie' do
+      movie_params = FactoryBot.attributes_for(:movie)
+      expect { post :create, :movie => movie_params }.to change(Movie, :count).by(1) 
+    end
+  end
 end

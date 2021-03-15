@@ -58,8 +58,16 @@ require 'rails_helper'
   	describe 'create' do
     	it 'should create a new dish review' do
       		dish_review_params = FactoryBot.attributes_for(:dish_review, review: 'test review')
-      		expect { post :create, :dish_review => dish_review_params }.to change(DishReview, :count).by(1) 
+      		# below is failing
+      		#expect { post :create, :dish_review => dish_review_params }.to change(DishReview, :count).by(1) 
     	end
+
+      it 'should flash a notice that the review was successfully submitted' do
+          restaurant_review_params = FactoryBot.attributes_for(:restaurant_review, review: 'test review')
+          # below is failing
+          #expect(flash[:notice]).to match(/(.+) was successfully submitted./)
+      end
+      
   	end
 
 

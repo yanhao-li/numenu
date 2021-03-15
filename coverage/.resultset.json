@@ -1,6 +1,12 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/georgedinicola/Desktop/numenu/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/georgedinicola/Desktop/numenu/app/controllers/dish_reviews_controller.rb": {
         "lines": [
           1,
@@ -40,12 +46,6 @@
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/Users/georgedinicola/Desktop/numenu/app/controllers/dishes_controller.rb": {
         "lines": [
           1,
@@ -73,19 +73,19 @@
         "lines": [
           1,
           1,
-          0,
-          0,
-          0,
-          0,
+          4,
+          4,
+          4,
+          4,
           0,
           0,
           null,
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          2,
+          2,
+          2,
           0,
           null,
           null,
@@ -111,6 +111,12 @@
           null
         ]
       },
+      "/Users/georgedinicola/Desktop/numenu/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/georgedinicola/Desktop/numenu/app/models/user.rb": {
         "lines": [
           1,
@@ -120,6 +126,14 @@
         ]
       },
       "/Users/georgedinicola/Desktop/numenu/app/models/dish_review.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/georgedinicola/Desktop/numenu/app/models/restaurant_review.rb": {
         "lines": [
           1,
           1,
@@ -155,16 +169,6 @@
         "branches": {
         }
       },
-      "/Users/georgedinicola/Desktop/numenu/app/models/restaurant_review.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/georgedinicola/Desktop/numenu/app/models/application_record.rb": {
         "lines": [
           0,
@@ -182,14 +186,6 @@
           null,
           null,
           null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/georgedinicola/Desktop/numenu/app/controllers/users_controller.rb": {
-        "lines": [
-          0,
           0
         ],
         "branches": {
@@ -240,6 +236,6 @@
         }
       }
     },
-    "timestamp": 1615825503
+    "timestamp": 1615826330
   }
 }

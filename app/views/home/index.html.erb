@@ -1,2 +1,14 @@
-<h1>This will be the homepage for numenu</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!-- <h1>This will be the homepage for numenu</h1>
+<p>Find me in app/views/home/index.html.erb</p> -->
+
+<div id="banner">
+	<span id="back-arrow"><</span>
+	<span id="title">Numenu</span>
+	<span id="user-icon">
+		<img id="user-icon-img" src="~/app/assets/images/Sample_User_Icon.png">
+	</span>
+</div>
+
+<div id="welcome">Welcome to Numenu
+<%= link_to 'View Restaurants', restaurants_path, :class => 'btn btn-primary' %>
+</div>

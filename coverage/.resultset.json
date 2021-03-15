@@ -1,13 +1,13 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/georgedinicola/Desktop/numenu/app/controllers/application_controller.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/controllers/dish_reviews_controller.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/controllers/dish_reviews_controller.rb": {
         "lines": [
           1,
           1,
@@ -46,7 +46,7 @@
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/controllers/dishes_controller.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/controllers/dishes_controller.rb": {
         "lines": [
           1,
           1,
@@ -61,7 +61,7 @@
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/controllers/home_controller.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/controllers/home_controller.rb": {
         "lines": [
           1,
           1,
@@ -69,7 +69,7 @@
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/controllers/restaurant_reviews_controller.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/controllers/restaurant_reviews_controller.rb": {
         "lines": [
           1,
           1,
@@ -102,7 +102,7 @@
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/controllers/restaurants_controller.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/controllers/restaurants_controller.rb": {
         "lines": [
           1,
           1,
@@ -111,21 +111,13 @@
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/controllers/users_controller.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/controllers/users_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/models/dish_review.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/georgedinicola/Desktop/numenu/app/models/dish.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/models/dish_review.rb": {
         "lines": [
           1,
           1,
@@ -133,7 +125,7 @@
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/models/restaurant_review.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/models/dish.rb": {
         "lines": [
           1,
           1,
@@ -141,7 +133,7 @@
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/models/restaurant.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/models/restaurant_review.rb": {
         "lines": [
           1,
           1,
@@ -149,7 +141,7 @@
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/models/user.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/models/restaurant.rb": {
         "lines": [
           1,
           1,
@@ -157,7 +149,15 @@
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/mailers/application_mailer.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -167,7 +167,7 @@
         "branches": {
         }
       },
-      "/Users/georgedinicola/Desktop/numenu/app/models/application_record.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/models/application_record.rb": {
         "lines": [
           0,
           0,
@@ -176,7 +176,7 @@
         "branches": {
         }
       },
-      "/Users/georgedinicola/Desktop/numenu/app/jobs/application_job.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/jobs/application_job.rb": {
         "lines": [
           0,
           null,
@@ -189,7 +189,7 @@
         "branches": {
         }
       },
-      "/Users/georgedinicola/Desktop/numenu/app/helpers/restaurants_helper.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/helpers/restaurants_helper.rb": {
         "lines": [
           0,
           0
@@ -197,7 +197,7 @@
         "branches": {
         }
       },
-      "/Users/georgedinicola/Desktop/numenu/app/helpers/home_helper.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/helpers/home_helper.rb": {
         "lines": [
           0,
           0
@@ -205,7 +205,7 @@
         "branches": {
         }
       },
-      "/Users/georgedinicola/Desktop/numenu/app/helpers/application_helper.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/helpers/application_helper.rb": {
         "lines": [
           0,
           0
@@ -213,7 +213,7 @@
         "branches": {
         }
       },
-      "/Users/georgedinicola/Desktop/numenu/app/channels/application_cable/connection.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -223,7 +223,7 @@
         "branches": {
         }
       },
-      "/Users/georgedinicola/Desktop/numenu/app/channels/application_cable/channel.rb": {
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -234,6 +234,6 @@
         }
       }
     },
-    "timestamp": 1615834888
+    "timestamp": 1615837896
   }
 }

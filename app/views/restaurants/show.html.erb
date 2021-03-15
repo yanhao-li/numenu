@@ -12,14 +12,14 @@
 Menu items for <%= @restaurant.name %>
 </br>
 
-<% @restaurant.dishes.each do |r| %>
+<% @restaurant.dishes.each do |dish| %>
 	<div>
 		<span>
-			<%= r.dish_name %>
+			<%= dish.dish_name %>
 		</span>
 		<span>
-			<%= r.description %>
+			<%= dish.description %>
 		</span>
-		<span><%= link_to 'See reviews', dish_reviews_path({:dish => r, :restaurant => @restaurant.restaurant_id}), :class => 'btn btn-primary' %></span>
+		<span><%= link_to 'See reviews', dish_reviews_path(dish), :class => 'btn btn-primary' %></span>
 	</div>
 <% end %>

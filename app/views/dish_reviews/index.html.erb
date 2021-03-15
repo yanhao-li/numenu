@@ -9,18 +9,18 @@
 <%= link_to 'Back to Restaurants', restaurants_path, :class => 'btn btn-primary' %>
 
 </br>
-Reviews for <%= @restaurant.name %>'s <%= @dish.dish_name %>
+Reviews for <%= @dish.restaurant.name %>'s <%= @dish.dish_name %>
 </br>
 
-<% @reviews.each do |r| %>
+<% @dish.dish_reviews.each do |review| %>
 	<div>
 		<span>
-			<%= r.rating %>
+			<%= review.rating %>
 		</span>
 		<span>
-			<%= r.review %>
+			<%= review.review %>
 		</span>
 	</div>
 <% end %>
 
-<%= link_to 'Write Review', dish_reviews_new_path({:dish => @dish, :restaurant => @restaurant.restaurant_id}), :class => 'btn btn-primary' %>
+<%= link_to 'Write Review', new_dish_review_path(@dish), :class => 'btn btn-primary' %>

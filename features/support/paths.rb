@@ -45,10 +45,10 @@ module NavigationHelpers
     restaurant_path(id)
     # '/restaurants/%d' % id
 
-  when /^the write dish review page for (.*) (.*)/i
-    # restaurant_id = Restaurant.find_by(name: $1).id
-    dish_id = Dish.find_by(dish_name: $2).id
-    new_dish_reviews_path(dish_id)
+  when /^the write dish review page for (.*) at (.*)/i
+    restaurant_id = Restaurant.find_by(name: $2).id
+    dish_id = Dish.find_by(dish_name: $1).id
+    new_dish_review_path(dish_id)
     # "/dish_reviews/new?dish=#{dish_id}&restaurant=#{restaurant_id}"
 
     else

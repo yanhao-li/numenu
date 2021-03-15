@@ -23,4 +23,4 @@ Reviews for <%= @restaurant.name %>
 	</div>
 <% end %>
 
-<%= link_to 'Write Review', new_restaurant_reviews_path(@restaurant.restaurant_id), :class => 'btn btn-primary' %>
+<%= link_to 'Write Review', new_restaurant_review_path(@restaurant.restaurant_id), :class => 'btn btn-primary' %>

@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe RestaurantsController do
   
-  describe 'index' do
-    it 'should render all of the restaurants' do
-      get :index
-      expect(response).to render_template('index')
+  describe 'GET index' do
+    it 'assigns @restaurants'
+      restaurant = Restaurant.create
+      expect(assigns(:restaurants)).to eq([restaurant])
     end
-  end
+
 end

@@ -9,14 +9,6 @@
           null
         ]
       },
-      "/Users/georgedinicola/Desktop/numenu/app/models/restaurant.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/georgedinicola/Desktop/numenu/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -38,6 +30,16 @@
         }
       },
       "/Users/georgedinicola/Desktop/numenu/app/models/dish.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/georgedinicola/Desktop/numenu/app/models/restaurant.rb": {
         "lines": [
           0,
           0,
@@ -597,6 +599,6 @@
         }
       }
     },
-    "timestamp": 1615814789
+    "timestamp": 1615816406
   }
 }

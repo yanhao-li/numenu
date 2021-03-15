@@ -5,14 +5,8 @@ require 'rails_helper'
  		#restaurant = FactoryBot.create(:restaurants, :title => 'Jurassic Park', :director => 'Steven Spielberg')
 
  		it "assigns @restaurants" do
- 			restaurant = Restaurant.create
  			get :index
- 			expect(assigns(:restaurants)).to eq([restaurant])
+ 			expect(response).to render_template(:index)   # wraps assert_template
  		end
-
- 		it "renders the index template" do
-      		get :index
-            expect(response).to render_template("index")
-        end
     end
   end

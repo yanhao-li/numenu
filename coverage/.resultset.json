@@ -50,10 +50,10 @@
         "lines": [
           1,
           1,
-          0,
-          0,
-          0,
-          0,
+          3,
+          3,
+          3,
+          3,
           0,
           0,
           null,
@@ -106,7 +106,7 @@
         "lines": [
           1,
           1,
-          1,
+          4,
           null,
           null
         ]
@@ -127,6 +127,14 @@
           null
         ]
       },
+      "/Users/georgedinicola/Desktop/numenu/app/models/dish.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/georgedinicola/Desktop/numenu/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -138,16 +146,6 @@
         }
       },
       "/Users/georgedinicola/Desktop/numenu/app/models/dish_review.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/georgedinicola/Desktop/numenu/app/models/dish.rb": {
         "lines": [
           0,
           0,
@@ -242,6 +240,6 @@
         }
       }
     },
-    "timestamp": 1615821144
+    "timestamp": 1615823090
   }
 }

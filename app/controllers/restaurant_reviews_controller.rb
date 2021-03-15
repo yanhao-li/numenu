@@ -24,6 +24,6 @@ class RestaurantReviewsController < ApplicationController
 		rating = inputs[:rating]
 	    @review = RestaurantReview.create!(review: review, rating: rating, restaurant_id: restaurant_id)
 	    flash[:notice] = "Review was successfully submitted."
-	    redirect_to restaurants_path
+	    redirect_to restaurant_reviews_path(restaurant_id)
 	end
 end

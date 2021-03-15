@@ -6,17 +6,13 @@
 	</span>
 </div>
 
-<h2>Write Review For </h2>
+<h2>Write Review For <%= @restaurant.name %></h2>
 
-<%= form_tag restaurant_reviews_path, :class => 'form' do %>
-  <%= label :restaurant_review, :title, 'Title', :class => 'col-form-label' %>
-  <%= text_field :restaurant_review, :title, :class => 'form-control' %>
-  <%= label :restaurant_review, :rating, 'Rating', :class => 'col-form-label'  %>
-  <%= select :restaurant_review, :rating, ['G','PG','PG-13','R','NC-17'], {}, {:class => 'form-control col-1'} %>
-  <%= label :restaurant_review, :director, 'Director', :class => 'col-form-label' %>
-  <%= text_field :restaurant_review, :director, :class => 'form-control' %>
-  <%= label :restaurant_review, :release_date, 'Released On', :class => 'col-form-label'  %>
-  <%= date_select :restaurant_review, :release_date, {}, :class => 'form-control col-2 d-inline' %>
+<%= form_tag restaurant_reviews_path(@restaurant), :class => 'form' do %>
+  <%= label :restaurant_review, :review, 'Review', :class => 'col-form-label' %>
+  <%= text_field :restaurant_review, :review, :class => 'form-control'  %>
+  <%= label :restaurant_review, :rating, 'Rating', :class => 'col-form-label' %>
+  <%= select :restaurant_review, :rating, [1,2,3,4,5], {}, {:class => 'form-control col-1'} %>
   <br/>
   <%= submit_tag 'Save', :class => 'btn btn-primary' %>
   <%= link_to 'Cancel', restaurants_path, :class => 'btn btn-secondary' %>

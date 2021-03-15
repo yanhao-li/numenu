@@ -5,7 +5,7 @@ I want to write a dish review
 
 Background: restaurants in database
 	Given the following restaurants exist:
-	| name        | restaurant_id    |
+	| name        | id               |
 	| Garaje      | 1                |
 	| La Salle's  | 2                |
 

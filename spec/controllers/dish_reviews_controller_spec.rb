@@ -1,7 +1,7 @@
 require 'rails_helper'
 
   RSpec.describe DishReviewsController, type: :controller do
-		dish = Dish.take
+		dish = Dish.create
     describe 'GET index' do
     	it 'should render all of the dish reviews' do
       		get :index, params: {:dish_id => dish.id}

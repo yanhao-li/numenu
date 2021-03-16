@@ -12,6 +12,11 @@ require 'rails_helper'
     		get :index
     		expect(response).to have_http_status(:ok)
     	end
+
+			it "returans a 200" do
+				get :show, params: {:id => Restaurant.take.id}
+				expect(response).to have_http_status(:ok)
+			end
   	end
 
   end

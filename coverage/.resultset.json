@@ -11,26 +11,11 @@
         "lines": [
           1,
           1,
-          4,
-          4,
-          4,
-          4,
-          4,
-          0,
-          0,
-          0,
-          null,
+          3,
           null,
           null,
           1,
           2,
-          2,
-          2,
-          2,
-          2,
-          0,
-          0,
-          null,
           null,
           null,
           1,
@@ -41,8 +26,15 @@
           0,
           0,
           0,
-          0,
           null,
+          null
+        ]
+      },
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/models/dish.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -73,32 +65,33 @@
         "lines": [
           1,
           1,
-          4,
-          4,
-          4,
-          4,
-          0,
-          0,
-          null,
+          2,
+          2,
           null,
           null,
           1,
           2,
-          2,
-          2,
-          0,
-          null,
           null,
           null,
           1,
           0,
           0,
           0,
-          0,
-          0,
+          null,
+          null,
+          null,
+          null,
           0,
           0,
           null,
+          null
+        ]
+      },
+      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/models/restaurant.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -106,7 +99,7 @@
         "lines": [
           1,
           1,
-          4,
+          3,
           null,
           null,
           1,
@@ -129,23 +122,7 @@
           null
         ]
       },
-      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/models/dish.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/models/restaurant_review.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/yanhaoli/Dropbox/university/columbia/21spring/4156-advanced-software-engineering/numenu/app/models/restaurant.rb": {
         "lines": [
           1,
           1,
@@ -238,6 +215,6 @@
         }
       }
     },
-    "timestamp": 1615839133
+    "timestamp": 1615854819
   }
 }

@@ -1,49 +1,29 @@
 require 'rails_helper'
 
-  RSpec.describe RestaurantReviewsController, type: :controller do
-  	
-  	describe 'index' do
-    	it 'assigns @restaurant and @reviews to nil' do
-    		#restaurant = FactoryBot.create(:restaurant, :name => 'test')
-    		#r_id = restaurant.id
-      		#dishes = FactoryBot.create(:dish, :dish_name => 'test_dish', :restaurant_id => r_id)
-      		#d_id = dishes.id
-      		#reviews = FactoryBot.create(:review, :review => 'Test_review', :restaurant_id => r_id, :dish_id = d_id)
-      		restaurant = nil
-      		reviews = nil
-      		get :index
-      		expect(assigns(:restaurants)).to eq(restaurant)
-      		expect(assigns(:reviews)).to eq(reviews)
-    	end
-
+  RSpec.describe RestaurantReviewsController, type: :controller do  	
+		restaurant = Restaurant.create(:name => 'Solae\'s Lounge', :latitude => 45.5592512, :longitude => -122.6464338,
+			:phone_number => '', :street_name => '1801 NE Alberta St', :street_number => '', 
+			:city => 'Portland', :state => 'OR', :zip_code => '97211')
+  	describe 'GET index' do
     	it 'should render all of the dish reviews' do
-      		get :index
+      		get :index, params: {:restaurant_id => restaurant.id}
       		expect(response).to render_template('index')
     	end
 
     	it "returns a 200" do
-    		get :index
+    		get :index, params: {:restaurant_id => restaurant.id}
     		expect(response).to have_http_status(:ok)
     	end
   	end
 
   	describe 'new' do
-    	it 'assigns @restaurant to nil' do
-    		#restaurant = FactoryBot.create(:restaurant, :name => 'test')
-    		#r_id = restaurant.id
-      		#reviews = FactoryBot.create(:review, :review => 'Test_review', :restaurant_id => r_id, :dish_id = d_id)
-      		restaurant = nil
-      		get :index
-      		expect(assigns(:restaurants)).to eq(restaurant)
-    	end
-
     	it 'should render "new" template' do
-      		get :new
+      		get :new, params: {:restaurant_id => restaurant.id}
       		expect(response).to render_template('new')
     	end
 
     	it "returns a 200" do
-    		get :new
+    		get :new, params: {:restaurant_id => restaurant.id}
     		expect(response).to have_http_status(:ok)
     	end
   	end

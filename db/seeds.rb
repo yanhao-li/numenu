@@ -58,22 +58,22 @@ restaurant_reviews = [
 
 dishes = [
 	{
-		:dish_id => '1', :price => 6.49, :description => ''
+		:dish_id => '1', :price => 6.49, :description => '', :restaurant_id => '2'
 	},
 	{
-		:dish_id => '2', :price => 5.49, :description => ''
+		:dish_id => '2', :price => 5.49, :description => '', :restaurant_id => '3'
 	},
 	{
-		:dish_id => '3', :price => 12.95, :description => ''
+		:dish_id => '3', :price => 12.95, :description => '', :restaurant_id => '1'
 	},
 	{
-		:dish_id => '4', :price => 8.99, :description => ''
+		:dish_id => '4', :price => 8.99, :description => '', :restaurant_id => '1'
 	},
 	{
 		:dish_id => '5', :dish_name => "tacos", :price => 7.99, :description => 'tasty tasty tacos', :restaurant_id => '1'
 	},
 	{
-		:dish_id => '6', :price => 10.90, :description => 'corn chips topped with black beans.'
+		:dish_id => '6', :price => 10.90, :description => 'corn chips topped with black beans.', :restaurant_id => '1'
 	},
 
 ]

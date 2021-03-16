@@ -5,7 +5,7 @@ I want to be able to see the restaurant's menu
 
 Background: restaurants in database
 	Given the following restaurants exist:
-	| name        | restaurant_id    |
+	| name        | id               |
 	| Garaje      | 1                |
 	| La Salle's  | 2                |
 

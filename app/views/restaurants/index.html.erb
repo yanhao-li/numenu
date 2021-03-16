@@ -8,16 +8,18 @@
 
 <div id="search-area">
 </div>
-<% @restaurants.each do |r| %>
+<% @restaurants.each do |restaurant| %>
 	<div id="restaurant">
 		<div id="restaurant-img">
 			<%= image_tag "food_filler.jpeg", style: 'height:100%;width:auto;' %>
 		</div>
 		<div id="restaurant-info">
 			<span id="description" class="text">
-				<%= link_to r.name, dishes_path(r), :class => 'btn btn-primary' %></span>
+				<%= link_to restaurant.name, restaurant_path(restaurant), :class => 'btn btn-primary' %>
 			</span>
-			<span id="reviews" class="text"><%= link_to "View reviews for " + r.name, restaurant_reviews_path(r), :class => 'btn btn-primary' %></span>
+			<span id="reviews" class="text">
+				<%= link_to "View reviews for " + restaurant.name, restaurant_reviews_path(restaurant), :class => 'btn btn-primary' %>
+			</span>
 			<span id="star">
 				⭐️
 			</span>

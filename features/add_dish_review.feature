@@ -5,7 +5,7 @@ I want to write a dish review
 
 Background: restaurants in database
 	Given the following restaurants exist:
-	| name        | restaurant_id    |
+	| name        | id               |
 	| Garaje      | 1                |
 	| La Salle's  | 2                |
 
@@ -14,7 +14,7 @@ Background: restaurants in database
 	| tacos       | tasty            | 1                | 1          |
 
 Scenario: add review to restaurant reviews page
-	When I go to the write dish review page for Garaje tacos
+	When I go to the write dish review page for "tacos" at "Garaje"
 	And I fill in "Review" with "loved it"
 	And I select "5" from "Rating"
 	And I press "Save"

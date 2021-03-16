@@ -14,7 +14,7 @@ Background: restaurants in database
 	| tacos       | tasty            | 1                | 1          |
 
 Scenario: add review to restaurant reviews page
-	When I go to the write dish review page for tacos at Garaje
+	When I go to the write dish review page for "tacos" at "Garaje"
 	And I fill in "Review" with "loved it"
 	And I select "5" from "Rating"
 	And I press "Save"

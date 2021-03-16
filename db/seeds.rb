@@ -4,12 +4,12 @@
 
 users = [
 	{
-		:user_id => '1', :phone_number => '565-233-0987', :first_name => 'Sebastien', :last_name => 'Smith',
+		:phone_number => '565-233-0987', :first_name => 'Sebastien', :last_name => 'Smith',
 		:city => 'New York', :state => 'NY', :zip_code => '10004', 
 		:email_address => 'sebastien_smith@gmail.com', :password => 'pass1'
 	},
 	{
-		:user_id => '2', :phone_number => '563-213-0373', :first_name => 'Joseph', :last_name => 'Miller',
+		:phone_number => '563-213-0373', :first_name => 'Joseph', :last_name => 'Miller',
 		:city => 'Philadelphia', :state => 'PA', :zip_code => '19103', 
 		:email_address => 'joe_miller@gmail.com', :password => 'pass2'
 	},
@@ -17,17 +17,17 @@ users = [
 
 restaurants = [
 	{
-		:restaurant_id => '1', :name => 'Garaje', :latitude => 37.7817529521, :longitude => -122.39612197,
+		:name => 'Garaje', :latitude => 37.7817529521, :longitude => -122.39612197,
 		:phone_number => '343-234-0918', :street_name => '475 3rd St', :street_number => '', 
 		:city => 'San Francisco', :state => 'CA', :zip_code => '94107'
 	},
 	{
-		:restaurant_id => '2', :name => 'Great Wraps', :latitude => 33.846335, :longitude => -84.3635778,
+		:name => 'Great Wraps', :latitude => 33.846335, :longitude => -84.3635778,
 		:phone_number => '', :street_name => '3393 Peachtree Rd', :street_number => '', 
 		:city => 'Atlanta', :state => 'GA', :zip_code => '30326'
 	},
 	{
-		:restaurant_id => '3', :name => 'Solae\'s Lounge', :latitude => 45.5592512, :longitude => -122.6464338,
+		:name => 'Solae\'s Lounge', :latitude => 45.5592512, :longitude => -122.6464338,
 		:phone_number => '', :street_name => '1801 NE Alberta St', :street_number => '', 
 		:city => 'Portland', :state => 'OR', :zip_code => '97211'
 	},
@@ -58,22 +58,22 @@ restaurant_reviews = [
 
 dishes = [
 	{
-		:dish_id => '1', :price => 6.49, :description => '', :restaurant_id => '2'
+		:price => 6.49, :description => '', :restaurant_id => '2'
 	},
 	{
-		:dish_id => '2', :price => 5.49, :description => '', :restaurant_id => '3'
+		:price => 5.49, :description => '', :restaurant_id => '3'
 	},
 	{
-		:dish_id => '3', :price => 12.95, :description => '', :restaurant_id => '1'
+		:price => 12.95, :description => '', :restaurant_id => '1'
 	},
 	{
-		:dish_id => '4', :price => 8.99, :description => '', :restaurant_id => '1'
+		:price => 8.99, :description => '', :restaurant_id => '1'
 	},
 	{
-		:dish_id => '5', :dish_name => "tacos", :price => 7.99, :description => 'tasty tasty tacos', :restaurant_id => '1'
+		:dish_name => "tacos", :price => 7.99, :description => 'tasty tasty tacos', :restaurant_id => '1'
 	},
 	{
-		:dish_id => '6', :price => 10.90, :description => 'corn chips topped with black beans.', :restaurant_id => '1'
+		:price => 10.90, :description => 'corn chips topped with black beans.', :restaurant_id => '1'
 	},
 
 ]

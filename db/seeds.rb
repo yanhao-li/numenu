@@ -36,22 +36,22 @@ restaurants = [
 
 restaurant_reviews = [
 	{
-		:restaurant_review_id => '1', :review => 'I hated it here. Too loud.', :rating => 1
+		:review => 'I hated it here. Too loud.', :rating => 1
 	},
 	{
-		:restaurant_review_id => '2', :review => 'My favorite restaurant. I love thier hamburgers.', :rating => 5
+		:review => 'My favorite restaurant. I love thier hamburgers.', :rating => 5
 	},
 	{
-		:restaurant_review_id => '3', :review => 'Decent place.', :rating => 3
+		:review => 'Decent place.', :rating => 3
 	},
 	{
-		:restaurant_review_id => '4', :review => 'The wraps here are great! Always kind service.', :rating => 5
+		:review => 'The wraps here are great! Always kind service.', :rating => 5
 	},
 	{
-		:restaurant_review_id => '5', :review => 'The restaurant was dirty.', :rating => 2
+		:review => 'The restaurant was dirty.', :rating => 2
 	},
 	{
-		:restaurant_review_id => '6', :review => 'This place needs to hire professional cleaners.', :rating => 1
+		:review => 'This place needs to hire professional cleaners.', :rating => 1
 	},
 
 ]
@@ -80,19 +80,19 @@ dishes = [
 
 dish_reviews = [
 	{
-		:dish_review_id => '1', :review => 'I liked it a lot.', :rating => 4
+		:review => 'I liked it a lot.', :rating => 4
 	},
 	{
-		:dish_review_id => '2', :review => 'The ribs were undercooked.', :rating => 2
+		:review => 'The ribs were undercooked.', :rating => 2
 	},
 	{
-		:dish_review_id => '3', :review => 'Very good beef brisket.', :rating => 4
+		:review => 'Very good beef brisket.', :rating => 4
 	},
 	{
-		:dish_review_id => '4', :review => 'Disgusting.', :rating => 1
+		:review => 'Disgusting.', :rating => 1
 	},
 	{
-		:dish_review_id => '5', :review => 'One of my favorite dishes from here!', :rating => 5
+		:review => 'One of my favorite dishes from here!', :rating => 5
 	},
 ]
 

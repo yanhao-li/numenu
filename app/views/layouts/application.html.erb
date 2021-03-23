@@ -13,6 +13,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container mx-auto">
+      <%= render "shared/header" %>
+      <%= yield %>
+    </div>
   </body>
 </html>

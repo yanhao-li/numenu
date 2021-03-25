@@ -17,19 +17,44 @@ users = [
 
 restaurants = [
 	{
-		:name => 'Garaje', :latitude => 37.7817529521, :longitude => -122.39612197,
-		:phone_number => '343-234-0918', :street_name => '475 3rd St', :street_number => '', 
-		:city => 'San Francisco', :state => 'CA', :zip_code => '94107'
+		:name => 'Community Food & Juice', :latitude => 40.805941, :longitude => -73.9657478,
+		:phone_number => '212-665-2800', :street_address => '2893 Broadway', 
+		:city => 'Manhattan', :state => 'NY', :zip_code => '10025'
 	},
 	{
-		:name => 'Great Wraps', :latitude => 33.846335, :longitude => -84.3635778,
-		:phone_number => '', :street_name => '3393 Peachtree Rd', :street_number => '', 
-		:city => 'Atlanta', :state => 'GA', :zip_code => '30326'
+		:name => 'Junzi Kitchen', :latitude => 40.8058137, :longitude => -73.9651685,
+		:phone_number => '917-261-2497', :street_address => '2896 Broadway',
+		:city => 'Manhattan', :state => 'NY', :zip_code => '10025'
 	},
 	{
-		:name => 'Solae\'s Lounge', :latitude => 45.5592512, :longitude => -122.6464338,
-		:phone_number => '', :street_name => '1801 NE Alberta St', :street_number => '', 
-		:city => 'Portland', :state => 'OR', :zip_code => '97211'
+		:name => 'Massawa', :latitude => 40.8097913, :longitude => -73.9586122,
+		:phone_number => '212-663-0505', :street_address => '1239 Amsterdam Ave', 
+		:city => 'New York', :state => 'NY', :zip_code => '10027'
+	},
+	{
+		:name => 'Kikoo Sushi', :latitude => 40.8015956, :longitude => -73.9613715,
+		:phone_number => '212-663-0505', :street_address => '998 Columbus Ave', 
+		:city => 'New York', :state => 'NY', :zip_code => '10025'
+	},
+	{
+		:name => 'Elysian Fields', :latitude => 40.8088518, :longitude => -73.9593463,
+		:phone_number => '212-837-1389', :street_address => '1207 Amsterdam Ave', 
+		:city => 'New York', :state => 'NY', :zip_code => '10027'
+	},
+	{
+		:name => 'Symposium', :latitude => 40.8055157, :longitude => -73.9642686,
+		:phone_number => '212-865-1011', :street_address => '544 W 113th St', 
+		:city => 'New York', :state => 'NY', :zip_code => '10025'
+	},
+	{
+		:name => 'Max Soha', :latitude => 40.8112405, :longitude => -73.9580424,
+		:phone_number => '212-531-2221', :street_address => '1274 Amsterdam Ave', 
+		:city => 'New York', :state => 'NY', :zip_code => '10027'
+	},
+	{
+		:name => 'Pisticci', :latitude => 40.8141691, :longitude => -73.9603502,
+		:phone_number => '212-932-3500', :street_address => '125 La Salle St', 
+		:city => 'New York', :state => 'NY', :zip_code => '10027'
 	},
 
 ]

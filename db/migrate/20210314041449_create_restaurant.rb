@@ -6,8 +6,7 @@ class CreateRestaurant < ActiveRecord::Migration[6.1]
       t.float :latitude
       t.float :longitude
       t.string :phone_number
-      t.string :street_name
-      t.string :street_number
+      t.string :street_address
       t.string :city
       t.string :state
       t.string :zip_code

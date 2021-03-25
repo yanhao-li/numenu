@@ -64,256 +64,323 @@ dishes = [
 	{
 		:dish_name => 'Fish of the Day',
 		:price => 24.00, 
-		:description => 'choice of one side'
+		:description => 'choice of one side',
+		:restaurant => 'Community Food & Juice',
 	},
 	{
 		:dish_name => 'Crispy Wild Organic Salmon',
 		:price => 22.00, 
-		:description => 'pan-seared with spring ragout of shiitakes, sugar snap peas, leeks & asparagus, with horseradish miso glaze' 
+		:description => 'pan-seared with spring ragout of shiitakes, sugar snap peas, leeks & asparagus, with horseradish miso glaze', 
+		:restaurant => 'Community Food & Juice'
 	},
 	{
 		:dish_name => 'House Ravioli',
 		:price => 18.00, 
-		:description => 'truffled spring pea filling, lemon butter sauce, satur farms micro greens'
+		:description => 'truffled spring pea filling, lemon butter sauce, satur farms micro greens',
+		:restaurant => 'Community Food & Juice'
 	},
 	{
 		:dish_name => 'Seared Sea Scallops',
 		:price => 24.00, 
-		:description => 'jumbo Chatham scallops over fresh summer corn pudding, with tomato concasse, sugar snap peas, and herb pan juices'
+		:description => 'jumbo Chatham scallops over fresh summer corn pudding, with tomato concasse, sugar snap peas, and herb pan juices',
+		:restaurant => 'Community Food & Juice'
 	},
 	{
 		:dish_name => 'Grilled Salmon Burger',
 		:price => 16.00, 
-		:description => 'made in house with wild organic salmon, served with avocado, arugula, wasabi mayo, and a side of dressed local greens'
+		:description => 'made in house with wild organic salmon, served with avocado, arugula, wasabi mayo, and a side of dressed local greens',
+		:restaurant => 'Community Food & Juice'
 	},
 	# Junzi Kitchen
 	{
 		:dish_name => 'firecracker chicken rice',
 		:price => 9.99, 
-		:description => '(spicy) white rice, firecracker chicken, stir-fried cabbage, pickled red cabbage, crispy shallots (add soy egg +1.5)'
+		:description => '(spicy) white rice, firecracker chicken, stir-fried cabbage, pickled red cabbage, crispy shallots (add soy egg +1.5)',
+		:restaurant => 'Junzi Kitchen'
 	},
 	{
 		:dish_name => 'cantonese bbq chicken rice',
 		:price => 11.99, 
-		:description => 'white rice, cantonese bbq chicken, roasted yams, stir-fried cabbage, ginger scallion sauce, scallions'
+		:description => 'white rice, cantonese bbq chicken, roasted yams, stir-fried cabbage, ginger scallion sauce, scallions',
+		:restaurant => 'Junzi Kitchen'
 	},
 	{
 		:dish_name => 'sichuan grilled pork rice',
 		:price => 11.99, 
-		:description => '(spicy) brown rice, sichuan grilled pork, bean sprouts, spicy pickled chayote, cilantro, chili oil'
+		:description => '(spicy) brown rice, sichuan grilled pork, bean sprouts, spicy pickled chayote, cilantro, chili oil',
+		:restaurant => 'Junzi Kitchen'
 	},
 	{
 		:dish_name => 'spicy sesame chicken noodles',
 		:price => 12.79, 
-		:description => 'spring noodles, furu sesame sauce, cantonese bbq chicken, bean sprouts, cucumbers, garlic chili, scallions'
+		:description => 'spring noodles, furu sesame sauce, cantonese bbq chicken, bean sprouts, cucumbers, garlic chili, scallions',
+		:restaurant => 'Junzi Kitchen'
 	},
 	{
 		:dish_name => 'sesame tofu noodles',
 		:price => 11.29, 
-		:description => '(vegan) spring noodles, furu sesame sauce, griddled tofu, bean sprouts, cucumbers, cilantro'
+		:description => '(vegan) spring noodles, furu sesame sauce, griddled tofu, bean sprouts, cucumbers, cilantro',
+		:restaurant => 'Junzi Kitchen'
 	},
 	# Massawa
 	{
 		:dish_name => 'SHIRO',
 		:price => 13.60, 
-		:description => 'Puréed split peas cooked with herbs and a hint of spice'
+		:description => 'Puréed split peas cooked with herbs and a hint of spice',
+		:restaurant => 'Massawa'
 	},
 	{
 		:dish_name => 'TSEBHI BEGHE',
 		:price => 14.50, 
-		:description => 'Spicy chunks simmered within a thick sauce of berbere'
+		:description => 'Spicy chunks simmered within a thick sauce of berbere',
+		:restaurant => 'Massawa'
 	},
 	{
 		:dish_name => 'TEBSI',
 		:price => 14.50, 
-		:description => 'Cubes of beef sautéed w/ onions, tomatoes, and jalapeno peppers (served mild or spicy)'
+		:description => 'Cubes of beef sautéed w/ onions, tomatoes, and jalapeno peppers (served mild or spicy)',
+		:restaurant => 'Massawa'
 	},
 	{
 		:dish_name => 'ALITCHA BEGHE',
 		:price => 14.50, 
-		:description => 'Mild lamb stew of curry, rosemary, and puréed onions'
+		:description => 'Mild lamb stew of curry, rosemary, and puréed onions',
+		:restaurant => 'Massawa'
 	},
 	{
 		:dish_name => 'ZEGENI',
 		:price => 14, 
-		:description => 'Savory beef stew simmered w/ berbere and onions'
+		:description => 'Savory beef stew simmered w/ berbere and onions',
+		:restaurant => 'Massawa'
 	},
 	# Kikoo Sushi
 	{
 		:dish_name => 'Chirashi Bowl',
 		:price => 18.00, 
-		:description => 'Served with assorted sashimi on sushi rice.'
+		:description => 'Served with assorted sashimi on sushi rice.',
+		:restaurant => 'Kikoo Sushi'
 	},
 	{
 		:dish_name => 'Poke Bowl',
 		:price => 18.00, 
-		:description => 'Served Hawaiian style sashimi over sushi rice.'
+		:description => 'Served Hawaiian style sashimi over sushi rice.',
+		:restaurant => 'Kikoo Sushi'
 	},
 	{
 		:dish_name => 'Chicken Teriyaki Bowl',
 		:price => 15.00, 
-		:description => 'Served with grill chicken with teriyaki sauce and steam broccoli over rice in bowl.'
+		:description => 'Served with grill chicken with teriyaki sauce and steam broccoli over rice in bowl.',
+		:restaurant => 'Kikoo Sushi'
 	},
 	{
 		:dish_name => 'Kobe Beef Sushi',
 		:price => 60.00, 
-		:description => 'Served with 6 pieces Kobe beef sushi and 1 Kobe beef roll.'
+		:description => 'Served with 6 pieces Kobe beef sushi and 1 Kobe beef roll.',
+		:restaurant => 'Kikoo Sushi'
 	},
 	{
 		:dish_name => 'Gyu Bowl',
 		:price => 15.00, 
-		:description => 'Served with sauteed beef with onion over rice in bowl.'
+		:description => 'Served with sauteed beef with onion over rice in bowl.',
+		:restaurant => 'Kikoo Sushi'
 	},
 	# Elysian Fields
 	{
 		:dish_name => 'Chicken Platter',
 		:price => 16.75, 
-		:description => 'generous cuts of natural chicken breast served with fries and basmati rice'
+		:description => 'generous cuts of natural chicken breast served with fries and basmati rice',
+		:restaurant => 'Elysian Fields'
 	},
 	{
 		:dish_name => 'Pork Platter',
 		:price => 16.75, 
-		:description => 'cuts of center pork served with fries and basmati rice'
+		:description => 'cuts of center pork served with fries and basmati rice',
+		:restaurant => 'Elysian Fields'
 	},
 	{
 		:dish_name => 'Beef Kebab Platter',
 		:price => 17.75, 
-		:description => 'hand rolled seasoned ground beef over basmati rice, tomato herbed sauce, fries'
+		:description => 'hand rolled seasoned ground beef over basmati rice, tomato herbed sauce, fries',
+		:restaurant => 'Elysian Fields'
 	},
 	{
 		:dish_name => 'Grilled Shrimp Platter',
 		:price => 17.75, 
-		:description => 'juicy and tender grilled marinated shrimp served with rice and basmati rice'
+		:description => 'juicy and tender grilled marinated shrimp served with rice and basmati rice',
+		:restaurant => 'Elysian Fields'
 	},
 	{
 		:dish_name => 'Gyro Giaourtlou Platter',
 		:price => 14.75, 
-		:description => 'gyro with paprika yogurt sauce, tomato, onions, fries'
+		:description => 'gyro with paprika yogurt sauce, tomato, onions, fries',
+		:restaurant => 'Elysian Fields'
 	},
 	# Symposium
 	{
 		:dish_name => 'Chicken Ala\'Greco',
 		:price => 14.95, 
-		:description => 'Broiled, marinated 1/2 chicken.'
+		:description => 'Broiled, marinated 1/2 chicken.',
+		:restaurant => 'Symposium'
 	},
 	{
 		:dish_name => 'Pork Souvlaki Platter',
 		:price => 15.95, 
-		:description => 'Skewer served with fries, tzatziki, pita and Greek salad.'
+		:description => 'Skewer served with fries, tzatziki, pita and Greek salad.',
+		:restaurant => 'Symposium'
 	},
 	{
 		:dish_name => 'Lamb Exohiko',
 		:price => 21.95, 
-		:description => 'Baked tender lamb in phyllo dough with carrots, peas and artichokes.'
+		:description => 'Baked tender lamb in phyllo dough with carrots, peas and artichokes.',
+		:restaurant => 'Symposium'
 	},
 	{
 		:dish_name => 'Beef Gyro Platter',
 		:price => 11.95, 
-		:description => 'Strips served with toasted pita, Greek salad and tzatziki'
+		:description => 'Strips served with toasted pita, Greek salad and tzatziki',
+		:restaurant => 'Symposium'
 	},
 	{
 		:dish_name => 'Shrimp Santorini',
 		:price => 23.95, 
-		:description => ''
+		:description => '',
+		:restaurant => 'Symposium'
 	},
 	# Max Soha
 	{
 		:dish_name => 'Chicken Parmigiana',
 		:price => 18.95, 
-		:description => 'breaded chicken breast topped with tomato sauce, melted mozzarella, basil & a side of spaghetti and tomato sauce'
+		:description => 'breaded chicken breast topped with tomato sauce, melted mozzarella, basil & a side of spaghetti and tomato sauce',
+		:restaurant => 'Max Soha'
 	},
 	{
 		:dish_name => 'Striped Sea Bass Livornese',
 		:price => 21.95, 
-		:description => 'seared striped sea bass filet with shrimp, capers, black, olvies, chopped tomatoes & a side of sauteed brussel sprouts'
+		:description => 'seared striped sea bass filet with shrimp, capers, black, olvies, chopped tomatoes & a side of sauteed brussel sprouts',
+		:restaurant => 'Max Soha'
 	},
 	{
 		:dish_name => 'Grilled New York Strip Steak',
 		:price => 24.95, 
-		:description => 'mushrooms, cracked black pepper, red wine sauce & a side of roasted potatoes'
+		:description => 'mushrooms, cracked black pepper, red wine sauce & a side of roasted potatoes',
+		:restaurant => 'Max Soha'
 	},
 	{
 		:dish_name => 'Chiken Marsala',
 		:price => 18.95, 
-		:description => 'mushrooms, Marsala wine & a side of mashed potatoes'
+		:description => 'mushrooms, Marsala wine & a side of mashed potatoes',
+		:restaurant => 'Max Soha'
 	},
 	{
 		:dish_name => 'Salmone Alla Griglia',
 		:price => 20.95, 
-		:description => 'grilled salmon filet with lemon, caper-butter sauce & a side of sauteed spinach'
+		:description => 'grilled salmon filet with lemon, caper-butter sauce & a side of sauteed spinach',
+		:restaurant => 'Max Soha'
 	},
 	# Pisticci
 	{
 		:dish_name => 'Baby Lettuce Salad',
 		:price => 13.00, 
-		:description => 'tender spring mix with cherry tomatoes and lightly dressed creamy balsamic'
+		:description => 'tender spring mix with cherry tomatoes and lightly dressed creamy balsamic',
+		:restaurant => 'Pisticci'
 	},
 	{
 		:dish_name => 'Vegetable Ceci',
 		:price => 11.00, 
-		:description => 'Grilled Portobello, zucchini, & squash medallions topped with chickpea puree and fresh mozz di bufala'
+		:description => 'Grilled Portobello, zucchini, & squash medallions topped with chickpea puree and fresh mozz di bufala',
+		:restaurant => 'Pisticci'
 	},
 	{
 		:dish_name => 'Penne Pisticci',
 		:price => 12.79, 
-		:description => 'red & yellow vine tomatoes with melted fresh mozzarella'
+		:description => 'red & yellow vine tomatoes with melted fresh mozzarella',
+		:restaurant => 'Pisticci'
 	},
 	{
 		:dish_name => 'Grilled Salmon Filet',
 		:price => 23.00, 
-		:description => 'we’ll cook your filet on the rare side so you can bring it to temperature at home. served with oven roasted tomatoes'
+		:description => 'we’ll cook your filet on the rare side so you can bring it to temperature at home. served with oven roasted tomatoes',
+		:restaurant => 'Pisticci'
 	},
 	{
 		:dish_name => 'Rigatoni alla Vodka',
 		:price => 19.00, 
-		:description => 'vodka, cream, tomato, parmigiano and a little bite of spice'
+		:description => 'vodka, cream, tomato, parmigiano and a little bite of spice',
+		:restaurant => 'Pisticci'
 	},
 ]
 
 
 restaurant_reviews = [
 	{
-		:review => 'I hated it here. Too loud.', :rating => 1
+		:review => 'I hated it here. Too loud.', :rating => 1, 
+		:restaurant => 'Community Food & Juice',
+		:user_email => 'sebastien_smith@gmail.com'
 	},
 	{
-		:review => 'My favorite restaurant. I love their hamburgers.', :rating => 5
+		:review => 'My favorite restaurant. I love their hamburgers.', :rating => 5, 
+		:restaurant => 'Junzi Kitchen',
+		:user_email => 'sebastien_smith@gmail.com'
 	},
 	{
-		:review => 'Decent place.', :rating => 3
+		:review => 'Decent place.', :rating => 3, 
+		:restaurant => 'Massawa',
+		:user_email => 'sebastien_smith@gmail.com'
 	},
 	{
-		:review => 'The wraps here are great! Always kind service.', :rating => 5
+		:review => 'The wraps here are great! Always kind service.', :rating => 5,
+		:restaurant => 'Kikoo Sushi',
+		:user_email => 'sebastien_smith@gmail.com'
 	},
 	{
-		:review => 'The restaurant was dirty.', :rating => 2
+		:review => 'The restaurant was dirty.', :rating => 2,
+		:restaurant => 'Elysian Fields',
+		:user_email => 'joe_miller@gmail.com'
 	},
 	{
-		:review => 'Great restaurant. I highly recommend coming here at least once.', :rating => 5
+		:review => 'Great restaurant. I highly recommend coming here at least once.',
+		:rating => 5,
+		:restaurant => 'Symposium',
+		:user_email => 'joe_miller@gmail.com'
 	},
 	{
-		:review => 'Test bad review', :rating => 1
+		:review => 'Test bad review', :rating => 1,
+		:restaurant => 'Max Soha',
+		:user_email => 'joe_miller@gmail.com'
 	},
 	{
-		:review => 'Test okay review', :rating => 3
+		:review => 'Test okay review', :rating => 3,
+		:restaurant => 'Pisticci',
+		:user_email => 'joe_miller@gmail.com'
 	},
 ]
 
 
 dish_reviews = [
 	{
-		:review => 'I liked it a lot.', :rating => 4
+		:review => 'I liked it a lot.', :rating => 4,
+		:dish => 'Beef Gyro Platter',
+		:user_email => 'joe_miller@gmail.com'
 	},
 	{
-		:review => 'The ribs were undercooked.', :rating => 2
+		:review => 'The ribs were undercooked.', :rating => 2,
+		:dish => 'Striped Sea Bass Livornese',
+		:user_email => 'joe_miller@gmail.com'
 	},
 	{
-		:review => 'Very good beef brisket.', :rating => 4
+		:review => 'Very good beef brisket.', :rating => 4,
+		:dish => 'TSEBHI BEGHE',
+		:user_email => 'sebastien_smith@gmail.com'
 	},
 	{
-		:review => 'Disgusting.', :rating => 1
+		:review => 'Disgusting.', :rating => 1,
+		:dish => 'Baby Lettuce Salad',
+		:user_email => 'joe_miller@gmail.com'
 	},
 	{
-		:review => 'One of my favorite dishes from here!', :rating => 5
+		:review => 'One of my favorite dishes from here!', :rating => 5,
+		:dish => 'Seared Sea Scallops',
+		:user_email => 'sebastien_smith@gmail.com'
 	},
 ]
 
@@ -321,34 +388,41 @@ dish_reviews = [
 # seed users table
 users.each do |user|
   User.create!(user)
+
 end
 
-# seed restaurants table
-# also seed the dishes table with a reference to their associated restaurant
-# 5 dish reviews per resturant and in order.
-$i = 0  # counter for dishes
-$m = 0  # counter for reviews
 restaurants.each do |restaurant|
-
-	res = Restaurant.create!(restaurant)
-
-	$j = 1
-
-	begin
-  	 dish_data = dishes[$i]
-  	 res.dishes.create(dish_data)
-  	 $i += 1
-  	 $j += 1
-  end until $j <= 5
-
-  $m += 1
+  Restaurant.create!(restaurant)
 
 end
 
-#restaurant_reviews.each do |restaurant_review|
-#  RestaurantReview.create!(restaurant_review)
-#end
+#belongs to Restaurant
+dishes.each do |dish|
+	
+	res = dish[:restaurant]
+	restaurant = Restaurant.find_by(name: res)
+	restaurant.dishes.create(dish.except!(:restaurant))
+
+end
+
+#belongs to User and Restaurant
+restaurant_reviews.each do |restaurant_review|
+  
+  u _email = restaurant_review[:user_email]
+  res = restaurant_review[:restaurant]
+
+  RestaurantReview.create!(restaurant_review)
+
+end
 
 #dish_reviews.each do |dish_review|
 #  DishReview.create!(dish_review)
 #end
+
+
+
+# an array of hashes for all of the dishes associated w. the restaurant
+#restaurant_dishes = dishes.select {|dish| dish["restaurant"] == res.name }
+
+#restaurant_dishes.each do |dish_data|
+#res.dishes.create(dish_data.except!(:restaurant))

@@ -1,7 +1,6 @@
 class CreateRestaurant < ActiveRecord::Migration[6.1]
   def up
     create_table :restaurants do |t|
-      t.string :restaurant_id
       t.string :name
       t.float :latitude
       t.float :longitude

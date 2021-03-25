@@ -396,7 +396,7 @@ restaurants.each do |restaurant|
 
 end
 
-#belongs to Restaurant
+# belongs to Restaurant
 dishes.each do |dish|
 	
 	res = dish[:restaurant]
@@ -405,24 +405,35 @@ dishes.each do |dish|
 
 end
 
-#belongs to User and Restaurant
+# belongs to User and Restaurant
 restaurant_reviews.each do |restaurant_review|
   
-  u _email = restaurant_review[:user_email]
+  u_email = restaurant_review[:user_email]
   res = restaurant_review[:restaurant]
 
-  RestaurantReview.create!(restaurant_review)
+  user_id = User.find_by(email_address: u_email).id
+  restaurant = Restaurant.find_by(name: res)
+
+  review = restaurant.restaurant_reviews.build(restaurant_review.except!(:restaurant, :user_email))
+
+  review.user_id = user_id
+  review.save!
 
 end
 
-#dish_reviews.each do |dish_review|
-#  DishReview.create!(dish_review)
-#end
+# belongs to User and Dish
+dish_reviews.each do |dish_review|
+  
+  u_email = dish_review[:user_email]
+  d = dish_review[:dish]
 
+  user_id = User.find_by(email_address: u_email).id
+  dish = Dish.find_by(dish_name: d)
 
+  review = dish.dish_reviews.build(dish_review.except!(:dish, :user_email))
 
-# an array of hashes for all of the dishes associated w. the restaurant
-#restaurant_dishes = dishes.select {|dish| dish["restaurant"] == res.name }
+  review.user_id = user_id
 
-#restaurant_dishes.each do |dish_data|
-#res.dishes.create(dish_data.except!(:restaurant))
+  review.save!
+
+end

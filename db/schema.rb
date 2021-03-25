@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_15_233614) do
+ActiveRecord::Schema.define(version: 2021_03_14_041713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,27 +18,27 @@ ActiveRecord::Schema.define(version: 2021_03_15_233614) do
   create_table "dish_reviews", force: :cascade do |t|
     t.text "review"
     t.integer "rating"
-    t.bigint "dish_id"
-    t.bigint "user_id"
-    t.index ["dish_id"], name: "index_dish_reviews_on_dish_id"
-    t.index ["user_id"], name: "index_dish_reviews_on_user_id"
+    t.bigint "dishes_id"
+    t.bigint "users_id"
+    t.index ["dishes_id"], name: "index_dish_reviews_on_dishes_id"
+    t.index ["users_id"], name: "index_dish_reviews_on_users_id"
   end
 
   create_table "dishes", force: :cascade do |t|
     t.string "dish_name"
     t.float "price"
     t.text "description"
-    t.bigint "restaurant_id"
-    t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
+    t.bigint "restaurants_id"
+    t.index ["restaurants_id"], name: "index_dishes_on_restaurants_id"
   end
 
   create_table "restaurant_reviews", force: :cascade do |t|
     t.text "review"
     t.integer "rating"
-    t.bigint "restaurant_id"
-    t.bigint "user_id"
-    t.index ["restaurant_id"], name: "index_restaurant_reviews_on_restaurant_id"
-    t.index ["user_id"], name: "index_restaurant_reviews_on_user_id"
+    t.bigint "restaurants_id"
+    t.bigint "users_id"
+    t.index ["restaurants_id"], name: "index_restaurant_reviews_on_restaurants_id"
+    t.index ["users_id"], name: "index_restaurant_reviews_on_users_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 2021_03_15_233614) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "phone_number"
     t.string "first_name"
     t.string "last_name"
+    t.string "phone_number"
     t.string "city"
     t.string "state"
     t.string "zip_code"
@@ -63,4 +63,9 @@ ActiveRecord::Schema.define(version: 2021_03_15_233614) do
     t.string "password"
   end
 
+  add_foreign_key "dish_reviews", "dishes", column: "dishes_id"
+  add_foreign_key "dish_reviews", "users", column: "users_id"
+  add_foreign_key "dishes", "restaurants", column: "restaurants_id"
+  add_foreign_key "restaurant_reviews", "restaurants", column: "restaurants_id"
+  add_foreign_key "restaurant_reviews", "users", column: "users_id"
 end

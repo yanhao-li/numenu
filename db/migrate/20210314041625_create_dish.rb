@@ -4,8 +4,11 @@ class CreateDish < ActiveRecord::Migration[6.1]
       t.string :dish_name
       t.float :price
       t.text :description
-      t.references 'restaurant'
+      t.references :restaurants #foreign_key: true
     end
+
+    add_foreign_key :dishes, :restaurants, column: :restaurants_id
+
   end
 
   def down

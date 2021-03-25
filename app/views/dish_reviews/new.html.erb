@@ -1,11 +1,3 @@
-<div id="banner">
-	<span id="back-arrow"><%= link_to '<', restaurant_reviews_path(@dish.restaurant), :class => 'btn btn-secondary' %></span>
-	<span id="title">Numenu</span>
-	<span id="user-icon">
-		<img id="user-icon-img" src="/images/Sample_User_Icon.png">
-	</span>
-</div>
-
 <h2>Write Review For <%= @dish.restaurant.name %>'s <%= @dish.dish_name %></h2>
 
 <%= form_tag dish_reviews_path(@dish), :class => 'form' do %>

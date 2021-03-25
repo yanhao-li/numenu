@@ -318,7 +318,7 @@ restaurant_reviews = [
 		:user_email => 'sebastien_smith@gmail.com'
 	},
 	{
-		:review => 'My favorite restaurant. I love their hamburgers.', :rating => 5, 
+		:review => 'My favorite restaurant. I love their firecracker chicken rice.', :rating => 5, 
 		:restaurant => 'Junzi Kitchen',
 		:user_email => 'sebastien_smith@gmail.com'
 	},
@@ -328,7 +328,7 @@ restaurant_reviews = [
 		:user_email => 'sebastien_smith@gmail.com'
 	},
 	{
-		:review => 'The wraps here are great! Always kind service.', :rating => 5,
+		:review => 'The sushi here is great! Always kind service.', :rating => 5,
 		:restaurant => 'Kikoo Sushi',
 		:user_email => 'sebastien_smith@gmail.com'
 	},
@@ -363,13 +363,13 @@ dish_reviews = [
 		:user_email => 'joe_miller@gmail.com'
 	},
 	{
-		:review => 'The ribs were undercooked.', :rating => 2,
+		:review => 'The bass was undercooked.', :rating => 2,
 		:dish => 'Striped Sea Bass Livornese',
 		:user_email => 'joe_miller@gmail.com'
 	},
 	{
-		:review => 'Very good beef brisket.', :rating => 4,
-		:dish => 'TSEBHI BEGHE',
+		:review => 'I really like the lamb here.', :rating => 4,
+		:dish => 'ALITCHA BEGHE',
 		:user_email => 'sebastien_smith@gmail.com'
 	},
 	{

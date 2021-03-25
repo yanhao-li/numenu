@@ -1,4 +1,4 @@
 class RestaurantReview < ActiveRecord::Base
-	belongs_to :restaurants, class_name: 'Restaurants'
-  	belongs_to :users, class_name: 'User'
+	belongs_to :restaurant, class_name: 'Restaurants'
+  	belongs_to :user, class_name: 'User'
 end

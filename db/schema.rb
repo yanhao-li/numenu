@@ -18,27 +18,27 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
   create_table "dish_reviews", force: :cascade do |t|
     t.text "review"
     t.integer "rating"
-    t.bigint "dishes_id"
-    t.bigint "users_id"
-    t.index ["dishes_id"], name: "index_dish_reviews_on_dishes_id"
-    t.index ["users_id"], name: "index_dish_reviews_on_users_id"
+    t.bigint "dish_id"
+    t.bigint "user_id"
+    t.index ["dish_id"], name: "index_dish_reviews_on_dish_id"
+    t.index ["user_id"], name: "index_dish_reviews_on_user_id"
   end
 
   create_table "dishes", force: :cascade do |t|
     t.string "dish_name"
     t.float "price"
     t.text "description"
-    t.bigint "restaurants_id"
-    t.index ["restaurants_id"], name: "index_dishes_on_restaurants_id"
+    t.bigint "restaurant_id"
+    t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 
   create_table "restaurant_reviews", force: :cascade do |t|
     t.text "review"
     t.integer "rating"
-    t.bigint "restaurants_id"
-    t.bigint "users_id"
-    t.index ["restaurants_id"], name: "index_restaurant_reviews_on_restaurants_id"
-    t.index ["users_id"], name: "index_restaurant_reviews_on_users_id"
+    t.bigint "restaurant_id"
+    t.bigint "user_id"
+    t.index ["restaurant_id"], name: "index_restaurant_reviews_on_restaurant_id"
+    t.index ["user_id"], name: "index_restaurant_reviews_on_user_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -63,9 +63,4 @@ ActiveRecord::Schema.define(version: 2021_03_14_041713) do
     t.string "password"
   end
 
-  add_foreign_key "dish_reviews", "dishes", column: "dishes_id"
-  add_foreign_key "dish_reviews", "users", column: "users_id"
-  add_foreign_key "dishes", "restaurants", column: "restaurants_id"
-  add_foreign_key "restaurant_reviews", "restaurants", column: "restaurants_id"
-  add_foreign_key "restaurant_reviews", "users", column: "users_id"
 end

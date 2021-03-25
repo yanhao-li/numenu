@@ -326,32 +326,24 @@ end
 # seed restaurants table
 # also seed the dishes table with a reference to their associated restaurant
 # 5 dish reviews per resturant and in order.
-# store the resturant_id into the dish seeds so they can be created w. foreign key
-$i = 0
-$j = 1
-$r_id
+$i = 0  # counter for dishes
+$m = 0  # counter for reviews
 restaurants.each do |restaurant|
-  
-  res = Restaurant.create!(restaurant)
 
-  $r_id = res.id  # get id of newly created
+	res = Restaurant.create!(restaurant)
 
-  $j = 1
+	$j = 1
 
-  begin
+	begin
   	 dish_data = dishes[$i]
-  	 dish_data.merge(restaurants_id: $r_id)
-  	 Dish.create(dish_data)
+  	 res.dishes.create(dish_data)
   	 $i += 1
   	 $j += 1
   end until $j <= 5
 
+  $m += 1
+
 end
-
-
-#dishes.each do |dish|
-#  Dish.create!(dish)
-#end
 
 #restaurant_reviews.each do |restaurant_review|
 #  RestaurantReview.create!(restaurant_review)

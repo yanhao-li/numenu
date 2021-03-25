@@ -1,4 +1,4 @@
 class DishReview < ActiveRecord::Base
-	belongs_to :dish, optional: true
-  	belongs_to :user, optional: true
+	belongs_to :dish, class_name: 'Dish'
+  	belongs_to :user, class_name: 'User'
 end

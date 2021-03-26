@@ -1,7 +1,7 @@
 require 'rails_helper'
 
   RSpec.describe DishReviewsController, type: :controller do
-		dish = Dish.create
+		dish = FactoryBot.create(:dish)
     describe 'GET index' do
     	it 'should render all of the dish reviews' do
       		get :index, params: {:dish_id => dish.id}
@@ -43,8 +43,9 @@ require 'rails_helper'
 
   	describe 'create' do
     	it 'should create a new dish review' do
-				expect do						
-					post :create, params: {:dish_id => Dish.take.id, :dish_review => {:review => 'test'}}
+				expect do
+          review = FactoryBot.create(:dish_review)	
+					post :create, params: {:dish_id => dish.id, :user_id => review.user_id, :dish_review => {:review => review.review}}
 				end.to change(DishReview, :count).by(1)
     	end
 

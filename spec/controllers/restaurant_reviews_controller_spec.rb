@@ -2,7 +2,7 @@ require 'rails_helper'
 
   RSpec.describe RestaurantReviewsController, type: :controller do  	
 		restaurant = Restaurant.create(:name => 'Solae\'s Lounge', :latitude => 45.5592512, :longitude => -122.6464338,
-			:phone_number => '', :street_name => '1801 NE Alberta St', :street_number => '', 
+			:phone_number => '', :street_address => '1801 NE Alberta St', 
 			:city => 'Portland', :state => 'OR', :zip_code => '97211')
   	describe 'GET index' do
     	it 'should render all of the dish reviews' do

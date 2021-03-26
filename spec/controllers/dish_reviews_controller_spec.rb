@@ -20,7 +20,7 @@ require 'rails_helper'
     		#r_id = restaurant.id
       		#dishes = FactoryBot.create(:dish, :dish_name => 'test_dish', :restaurant_id => r_id)
       		#d_id = dishes.id
-      		#reviews = FactoryBot.create(:review, :review => 'Test_review', :restaurant_id => r_id, :dish_id = d_id)
+      		#reviews = FactoryBot.create(:review, :review => 'Test_review', :restaurant_id => r_id, :id = d_id)
       		restaurant = nil
       		dishes = nil
       		reviews = nil

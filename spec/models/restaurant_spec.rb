@@ -5,9 +5,9 @@ RSpec.describe Restaurant, type: :model do
 	let(:restaurant) { Restaurant.create name: 'Restaurant' }
   	let(:restaurant2) { Restaurant.create name: 'Restaurant 2' }
 
-  	let(:review1) { RestaurantReview.create rating: 1 }
-  	let(:review2) { RestaurantReview.create rating: 3 }
-  	let(:review2) { RestaurantReview.create rating: 5 }
+  	let(:review1) { RestaurantReview.create rating: 1, restaurant_id: restaurant.id }
+  	let(:review2) { RestaurantReview.create rating: 3, restaurant_id: restaurant.id }
+  	let(:review2) { RestaurantReview.create rating: 5, restaurant_id: restaurant.id }
 
 	describe 'average_rating instance method' do
       

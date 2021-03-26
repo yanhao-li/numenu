@@ -7,8 +7,8 @@ RSpec.describe Dish, type: :model do
   let(:dish2) { Dish.create dish_name: 'Dish without reviews' }
 
   let(:review1) { DishReview.create rating: 1 }
-  let(:review2) { DishReview.create ratin: 3 }
-  let(:review2) { DishReview.create ratin: 5 }
+  let(:review2) { DishReview.create rating: 3 }
+  let(:review2) { DishReview.create rating: 5 }
 
 	describe 'average_rating instance method' do
       
@@ -18,7 +18,7 @@ RSpec.describe Dish, type: :model do
     end
 
     it "should return N/A if no reviews exist" do
-      expect(dish2.average_rating(dish.id)).to eq "N/A"
+      expect(dish2.average_rating(dish2.id)).to eq "N/A"
       
     end
     

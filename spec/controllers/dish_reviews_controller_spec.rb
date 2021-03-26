@@ -44,7 +44,8 @@ require 'rails_helper'
   	describe 'create' do
     	it 'should create a new dish review' do
 				expect do
-          review = FactoryBot.create(:dish_review)	
+          review = FactoryBot.create(:dish_review)
+
 					post :create, params: {:dish_id => dish.id, :user_id => review.user_id, :dish_review => {:review => review.review}}
 				end.to change(DishReview, :count).by(1)
     	end

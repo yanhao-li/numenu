@@ -20,7 +20,7 @@ Menu items for <%= @restaurant.name %>
 		</span>
 		<br>
 		<span>
-			Average Rating: <%= dish.average_rating(dish.id) %>
+			Average Rating: <%= DishReview.average_rating(dish.id) %>
 		</span>
 		<br>
 		<span><%= link_to 'See reviews', dish_reviews_path(dish), :class => 'btn btn-primary' %></span>

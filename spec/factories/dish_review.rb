@@ -5,7 +5,7 @@ FactoryBot.define do
   factory :dish_review do
     review          {'A Fake Review'} # default values
     rating          {3}
-    user            { build(:user) }
-    dish            { build(:dish) }
+    association     :user
+    association     :dish
   end
 end

@@ -16,3 +16,9 @@ Scenario: log into an account
 Scenario: log into an account with wrong credentials
 	When I log in with email "email", password "WRONG PASSWORD"
 	Then I should not see "firstName lastName"
+
+Scenario: log out of an account
+	When I log in with email "email", password "test"
+	And I go to the profile page
+	And I follow "Logout"
+	Then I should see "Login or Signup"

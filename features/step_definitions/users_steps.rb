@@ -25,3 +25,9 @@ When /^I sign up with email "(.*)", password "(.*)", first name "(.*)", and last
 
 	click_button("Sign Up")
 end
+
+When /^I log out/ do
+	visit users_profile_path
+
+	click_button("View Restaurants")
+end

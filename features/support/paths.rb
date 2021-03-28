@@ -16,6 +16,9 @@ module NavigationHelpers
     when /the restaurants page/
       restaurants_path
 
+    when /the profile page/
+      users_profile_path
+
     when /^the write review page for "(.*)"/i
       restaurant = Restaurant.find_by(name: $1)
       new_restaurant_review_path(restaurant)
@@ -28,6 +31,9 @@ module NavigationHelpers
       dish = Dish.find_by(dish_name: $1)
       restaurant = Restaurant.find_by(name: $2)
       new_dish_review_path(dish)
+
+    when /^the login and signup page/
+      users_path
 
     else
       begin

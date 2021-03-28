@@ -45,12 +45,14 @@ require 'rails_helper'
   	describe 'create' do
     	it 'should create a new dish review' do
 				expect do
-          #review = FactoryBot.build(:dish_review)        
+          #review = FactoryBot.build(:dish_review)   
+          login("test", "test")     
           post :create, params: {:dish_id => Dish.take.id, :user_id => User.take.id, :dish_review => {:review => 'test'}}
         end.to change(DishReview, :count).by(1)
     	end
 
       it 'should flash a notice that the review was successfully submitted' do
+        login("test", "test")
 				post :create, params: {:dish_id => Dish.take.id, :dish_review => {:review => 'test'}}
 				expect(flash[:notice]).to match(/(.+) was successfully submitted./)
       end

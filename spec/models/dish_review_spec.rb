@@ -1,6 +1,9 @@
 require 'rails_helper'
+require 'helpers/dish_helper'
 
 RSpec.describe DishReview, type: :model do
+
+  dish1 = dish_exists(1)
 
   review1 = FactoryBot.create(:dish_review, :rating => 1, :dish_id => 1)
   review2 = FactoryBot.create(:dish_review, :rating => 3, :dish_id => 1)

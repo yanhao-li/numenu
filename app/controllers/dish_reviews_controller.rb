@@ -12,8 +12,23 @@ class DishReviewsController < ApplicationController
 		inputs = params[:dish_review]
 		review = inputs[:review]
 		rating = inputs[:rating]
-	    @review = DishReview.create!(review: review, rating: rating, dish_id: dish_id)
-	    redirect_to dish_reviews_path(dish_id)
-	    flash[:notice] = "Review was successfully submitted."
+		if session[:user_id] != nil
+	    	@review = DishReview.create!(
+	    		review: review,
+	    		rating: rating,
+	    		dish_id: dish_id,
+	    		user_id: session[:user_id]
+	    	)
+	    	redirect_to dish_reviews_path(dish_id)
+	    	flash[:notice] = "Review was successfully submitted."
+	    else
+	    	@review = DishReview.create!(
+	    		review: review,
+	    		rating: rating,
+	    		dish_id: dish_id
+	    	)
+	    	redirect_to dish_reviews_path(dish_id)
+	    	flash[:notice] = "Review was successfully submitted."
+	    end
 	end
 end

@@ -1,0 +1,48 @@
+<h1>Hello <%= @user.first_name %> <%= @user.last_name %></h1>
+
+<%= link_to 'Logout', users_logout_path, :class => 'btn btn-primary' %>
+<%= link_to 'View Restaurants', restaurants_path, :class => 'btn btn-primary' %>
+
+<h2>My Restaurant Reviews:</h2>
+<% if @restaurant_reviews != nil %>
+	<% @restaurant_reviews.each do |r| %>
+		<div>
+			<span>
+				<%= r.restaurant.name %>
+			</span>
+			<br>
+			<span>
+				<%= r.rating %>
+			</span>
+			<span>
+				<%= r.review %>
+			</span>
+		</div>
+		<br>
+	<% end %>
+<% else %>
+	No restaurant reviews yet
+<% end %>
+
+<br>
+
+<h2>My Dish Reviews:</h2>
+<% if @dish_reviews != nil %>
+	<% @dish_reviews.each do |d| %>
+		<div>
+			<span>
+				<%= d.dish.dish_name %> from <%= d.dish.restaurant.name %>
+			</span>
+			<br>
+			<span>
+				<%= d.rating %>
+			</span>
+			<span>
+				<%= d.review %>
+			</span>
+		</div>
+		<br>
+	<% end %>
+<% else %>
+	No dish reviews yet
+<% end %>

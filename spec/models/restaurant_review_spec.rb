@@ -1,6 +1,9 @@
 require 'rails_helper'
+require 'helpers/restaurant_helper'
 
 RSpec.describe RestaurantReview, type: :model do
+
+  restaurant1 = restaurant_exists(1)
 
 	review1 = FactoryBot.create(:restaurant_review, :rating => 1, :restaurant_id => 1)
   	review2 = FactoryBot.create(:restaurant_review, :rating => 3, :restaurant_id => 1)

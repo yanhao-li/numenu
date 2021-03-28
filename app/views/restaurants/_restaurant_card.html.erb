@@ -1,0 +1,14 @@
+	<li class="rounded border shadow">
+		<a href="<%= restaurant_path(restaurant) %>">
+			<div class="h-28">
+				<%= image_tag "http://fpoimg.com/335x100", style: 'height:100%;width:auto;' %>
+			</div>
+			<div class="px-4 py-3">
+				<h1 class="text-lg font-bold"> <%= restaurant.name %> </h1>
+				<h2 class="text-base text-gray-500">
+					TODO: Category
+				</h2>
+				<span class="text">⭐️ <%= RestaurantReview.average_rating(restaurant.id) %></span>
+			</div>
+		</a>
+	</li>

@@ -5,9 +5,10 @@ I want to be able to view the restaurants
 
 Background: restaurants in database
 	Given the following restaurants exist:
-	| name        |
-	| Garaje      |
-	| La Salle's  |
+	| name        | id               |
+	| Garaje      | 1                |
+	| La Salle's  | 2                |
+
 
 Scenario: View the restaurants
 	Given I am on the home page

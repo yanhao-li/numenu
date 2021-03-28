@@ -5,8 +5,9 @@ I want to write a restaurant review
 
 Background: restaurants in database
 	Given the following restaurants exist:
-	| name        |
-	| Garaje      |
+	| name        | id               |
+	| Garaje      | 1                |
+	| La Salle's  | 2                |
 
 	Given the following users exist:
 	| email_address       | password         | first_name      | last_name        | id   |

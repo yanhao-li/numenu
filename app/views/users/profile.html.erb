@@ -1,10 +1,17 @@
-<h1>Hello <%= @user.first_name %> <%= @user.last_name %></h1>
+<div>
+	<span class="items-left justify-left w-48">
+		Hello <%= @user.first_name %> <%= @user.last_name %>
+	</span>
 
-<%= link_to 'Logout', users_logout_path, :class => 'btn btn-primary' %>
-<br>
+	<span class="items-right justify-right w-24">
+		<%= link_to 'Logout', users_logout_path, :class => 'btn btn-primary' %>
+	</span>
+</div>
 <%= link_to 'View Restaurants', restaurants_path, :class => 'btn btn-primary' %>
 
-<h2>My Restaurant Reviews:</h2>
+<h2>
+	My Restaurant Reviews:
+</h2>
 <% if @restaurant_reviews != nil %>
 	<% @restaurant_reviews.each do |r| %>
 		<div>

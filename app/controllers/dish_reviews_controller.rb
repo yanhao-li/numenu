@@ -22,13 +22,7 @@ class DishReviewsController < ApplicationController
 	    	redirect_to dish_reviews_path(dish_id)
 	    	flash[:notice] = "Review was successfully submitted."
 	    else
-	    	@review = DishReview.create!(
-	    		review: review,
-	    		rating: rating,
-	    		dish_id: dish_id
-	    	)
-	    	redirect_to dish_reviews_path(dish_id)
-	    	flash[:notice] = "Review was successfully submitted."
+	    	redirect_to dish_reviews_path(dish_id), alert: "Please login or sign up first"
 	    end
 	end
 end

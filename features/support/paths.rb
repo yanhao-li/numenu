@@ -29,6 +29,9 @@ module NavigationHelpers
       restaurant = Restaurant.find_by(name: $2)
       new_dish_review_path(dish)
 
+    when /^the login and signup page/
+      users_path
+
     else
       begin
         page_name =~ /^the (.*) page$/

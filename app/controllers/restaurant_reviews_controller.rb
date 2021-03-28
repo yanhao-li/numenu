@@ -21,13 +21,8 @@ class RestaurantReviewsController < ApplicationController
 			redirect_to restaurant_reviews_path(restaurant_id)
 			flash[:notice] = "Review was successfully submitted."
 		else
-			RestaurantReview.create!(
-				review: inputs[:review],
-				rating: inputs[:rating],
-				restaurant_id: restaurant_id
-			)
 			redirect_to restaurant_reviews_path(restaurant_id)
-			flash[:notice] = "Review was successfully submitted."
+			flash[:notice] = "Please login or sign up first"
 		end
 	end
 end

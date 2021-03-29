@@ -1,4 +1,95 @@
 <div id="welcome">
-	Welcome to Numenu
-	<%= link_to 'View Restaurants', restaurants_path, :class => 'btn btn-primary' %>
+  <%= render "shared/header" %>
+  <%= link_to 'SCAN', qr_path, :class => 'btn btn-primary' %>
+  <%= link_to 'Profile', profile_path, :class => 'btn btn-primary' %>
 </div>
+
+<h3>What are you looking for today?</h3>
+<div id='map'></div>
+<input id="address" type="textbox" value="Search">
+<input type="button" value="Search" onclick="codeAddress()">
+<style>
+#map {
+  height: 600px;
+  width: 600px;
+}
+</style>
+
+<script>
+let map;
+let infoWindow;
+let geocoder;
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 12,
+  });
+
+  infoWindow = new google.maps.InfoWindow();
+  /*gets current location when pressed*/
+  const locationButton = document.createElement("button");
+  locationButton.textContent = "Current Location";
+  locationButton.classList.add("custom-map-control-button");
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+
+  locationButton.addEventListener("click", () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const current = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          infoWindow.setPosition(current);
+          infoWindow.setContent("Location found.");
+          infoWindow.open(map);
+          map.setCenter(current);
+        },
+        () => {
+          handleLocationError(true, infoWindow, map.getCenter());
+        }
+      );
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+  });
+
+  marker = new google.maps.Marker({
+    position:  current,
+    map: map
+  });
+}
+
+/*if location not found*/
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(
+    browserHasGeolocation
+      ? "Error: The Geolocation service failed."
+      : "Error: Your browser doesn't support geolocation."
+  );
+  infoWindow.open(map);
+}
+
+// activates when search is pressed
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Could not find address ' + status);
+    }
+  });   
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5TAzLwfJrCP9wVteeQkbcwLgDhxhdt3c&callback=initMap" async defer></script>

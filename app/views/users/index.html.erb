@@ -1,0 +1,35 @@
+<%= link_to 'Back to Home', home_path, :class => 'btn btn-primary' %>
+
+<div id="login" class="flex-auto p-6">
+	<h2 class="text-xl font-semibold">Login:</h2>
+	<%= form_tag users_login_path, :class => 'form' do %>
+	  <%= label :user, :email, 'Email', :class => 'col-form-label' %>
+	  <%= text_field :user, :email, :class => 'form-control'  %>
+	  <%= label :user, :password, 'Password', :class => 'col-form-label' %>
+	  <%= password_field :user, :password, :class => 'form-control' %>
+	  <br/>
+	  <%= submit_tag 'Login', :class => 'btn btn-primary' %>
+	<% end %>
+</div>
+
+<div id="sign-up" class="flex-auto p-6">
+	<h2 class="text-xl font-semibold">Sign Up:</h2>
+	<%= form_tag users_signup_path, :class => 'form' do %>
+	  <%= label :user, :email, 'Email', :class => 'col-form-label' %>
+	  <%= text_field :user, :email, :class => 'form-control'  %>
+	  <br>
+	  <br>
+	  <%= label :user, :password, 'Password', :class => 'col-form-label' %>
+	  <%= password_field :user, :password, :class => 'form-control' %>
+	  <br>
+	  <br>
+	  <%= label :user, :firstName, 'First Name', :class => 'col-form-label' %>
+	  <%= text_field :user, :firstName, :class => 'form-control' %>
+	  <br>
+	  <br>
+	  <%= label :user, :lastName, 'Last Name', :class => 'col-form-label' %>
+	  <%= text_field :user, :lastName, :class => 'form-control' %>
+	  <br/>
+	  <%= submit_tag 'Sign Up', :class => 'btn btn-primary' %>
+	<% end %>
+</div>

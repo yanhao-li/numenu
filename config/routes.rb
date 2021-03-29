@@ -9,6 +9,14 @@ Rails.application.routes.draw do
     	resources :reviews, :controller => "dish_reviews"
     end
   end
+
+  get '/users', to: 'users#index'
+  post '/users/login', to: 'users#login'
+  post '/users/signup', to: 'users#signup'
+  get '/users/profile', to: 'users#profile'
+  get '/users/logout', to: 'users#logout'
+  get '/scan', to: 'home#scan'
+
 end
 
 

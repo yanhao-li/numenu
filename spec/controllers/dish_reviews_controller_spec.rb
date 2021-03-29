@@ -1,7 +1,8 @@
 require 'rails_helper'
 
   RSpec.describe DishReviewsController, type: :controller do
-		dish = Dish.create
+		dish = FactoryBot.create(:dish)
+    user = FactoryBot.create(:user)
     describe 'GET index' do
     	it 'should render all of the dish reviews' do
       		get :index, params: {:dish_id => dish.id}
@@ -20,7 +21,7 @@ require 'rails_helper'
     		#r_id = restaurant.id
       		#dishes = FactoryBot.create(:dish, :dish_name => 'test_dish', :restaurant_id => r_id)
       		#d_id = dishes.id
-      		#reviews = FactoryBot.create(:review, :review => 'Test_review', :restaurant_id => r_id, :dish_id = d_id)
+      		#reviews = FactoryBot.create(:review, :review => 'Test_review', :restaurant_id => r_id, :id = d_id)
       		restaurant = nil
       		dishes = nil
       		reviews = nil
@@ -43,12 +44,15 @@ require 'rails_helper'
 
   	describe 'create' do
     	it 'should create a new dish review' do
-				expect do						
-					post :create, params: {:dish_id => Dish.take.id, :dish_review => {:review => 'test'}}
-				end.to change(DishReview, :count).by(1)
+				expect do
+          #review = FactoryBot.build(:dish_review)   
+          login("test", "test")     
+          post :create, params: {:dish_id => Dish.take.id, :user_id => User.take.id, :dish_review => {:review => 'test'}}
+        end.to change(DishReview, :count).by(1)
     	end
 
       it 'should flash a notice that the review was successfully submitted' do
+        login("test", "test")
 				post :create, params: {:dish_id => Dish.take.id, :dish_review => {:review => 'test'}}
 				expect(flash[:notice]).to match(/(.+) was successfully submitted./)
       end

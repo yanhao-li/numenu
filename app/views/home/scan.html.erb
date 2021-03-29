@@ -1,0 +1,20 @@
+<div class="flex flex-col items-center mx-4">
+  <h3 class="text-center text-3xl font-medium my-10 text-gray-700">
+    Point your camera at a numenu code
+  </h3>
+  <canvas id="canvas" hidden class="w-full"></canvas>
+  <h3 class="text-center text-2xl font-medium my-10 text-gray-700">
+    Or
+  </h3>
+  <h3 class="text-center text-3xl font-medium my-10 text-gray-700">
+    Enter the 8 digits code
+  </h3>
+  <div class="flex">
+    <input class="text-center text-lg font-bold rounded" type="text"  maxlength="8">
+    <button class="bg-yellow-300 rounded ml-3 px-3 font-medium" type="submit">
+      Submit
+    </button>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'qrcode_scanner' %>

@@ -1,21 +1,7 @@
 <div id="search-area">
 </div>
-<% @restaurants.each do |restaurant| %>
-	<div id="restaurant">
-		<div id="restaurant-img">
-			<%= image_tag "food_filler.jpeg", style: 'height:100%;width:auto;' %>
-		</div>
-		<div id="restaurant-info">
-			<span id="description" class="text">
-				<%= link_to restaurant.name, restaurant_path(restaurant), :class => 'btn btn-primary' %>
-			</span>
-			<span id="reviews" class="text">
-				<%= link_to "View reviews for " + restaurant.name, restaurant_reviews_path(restaurant), :class => 'btn btn-primary' %>
-			</span>
-			<span id="star">
-				⭐️
-			</span>
-			<span id="score" class="text">Meal Score: 3.8</span>
-		</div>
-	</div>
-<% end %>
+<ul class="list-none space-y-6 container mx-auto px-6 py-6">
+	<% @restaurants.each do |restaurant| %>
+		<%= render "restaurant_card", restaurant: restaurant %>
+	<% end %>
+</ul>

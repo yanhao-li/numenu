@@ -1,8 +1,9 @@
 <div id="search-area">
-<%= form_tag(restaurants_path, method: :get) do %>
+<%= form_tag(restaurants_path, method: :get, class: "") do %>
   <%= text_field_tag(:restaurant_name, params[:restaurant_name]) %>
   <%= submit_tag ("Search") %>
 <% end %>
+
 </div>
 <ul class="list-none space-y-6 container mx-auto px-6 py-6">
 	<% @restaurants.each do |restaurant| %>

@@ -53,6 +53,6 @@ class UsersController < ApplicationController
 
 	def logout
 		session.delete(:user_id)
-		redirect_to home_path, alert: "successfully logged out"
+		redirect_to home_index_path, alert: "successfully logged out"
 	end
 end

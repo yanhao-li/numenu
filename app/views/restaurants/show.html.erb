@@ -2,6 +2,8 @@
 
 </br>
 Menu items for <%= @restaurant.name %>
+<br>
+Write a review for <%= link_to @restaurant.name, restaurant_reviews_path(@restaurant.id), :class => 'btn btn-primary' %>
 </br>
 
 <% @restaurant.dishes.each do |dish| %>

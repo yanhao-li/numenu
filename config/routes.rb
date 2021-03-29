@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   post '/users/signup', to: 'users#signup'
   get '/users/profile', to: 'users#profile'
   get '/users/logout', to: 'users#logout'
+  get '/scan', to: 'home#scan'
 
 end

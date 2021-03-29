@@ -1,6 +1,6 @@
-<div id="welcome">
-	Welcome to Numenu
-	<%= link_to 'View Restaurants', restaurants_path, :class => 'btn btn-primary' %>
-	<br>
-	<%= link_to 'Login or Signup', users_path, :class => 'btn btn-primary' %>
+<div id="home">
+	<div class="flex justify-center relative mt-8 mx-5">
+		<%= render 'shared/search' %>
+	</div>
+	<%= render "footer" %>
 </div>

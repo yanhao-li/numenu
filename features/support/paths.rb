@@ -14,7 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /the home page/
-      home_path
+      home_index_path
 
     when /the restaurants page/
       restaurants_path

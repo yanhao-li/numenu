@@ -1,9 +1,9 @@
 <div id="search_area">
-  <form action="/restaurants", method ="GET">
+  <form id="search" action="/restaurants", method ="GET">
     <div class="flex justify-center relative mt-8 mx-5">
     <div class="flex justify-center w-full">
-      <input class="rounded shadow-lg border-0 h-12 mr-2 flex-grow" type="text" placeholder="Search Restaurants" name="restaurant_name"/>
-      <button class="h-12 w-12 bg-yellow-400 shadow-lg rounded flex justify-center items-center">
+      <input id="search_box" class="rounded shadow-lg border-0 h-12 mr-2 flex-grow" type="text" placeholder="Search Restaurants" name="restaurant_name"/>
+      <button id="search_button" class="h-12 w-12 bg-yellow-400 shadow-lg rounded flex justify-center items-center">
       <%= render 'shared/icons/search', classname: "h-8" %>
       </button>
     </div>

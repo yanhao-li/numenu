@@ -64,6 +64,7 @@ function initMap(){
       // Browser doesn't support Geolocation
       handleLocationError(false, infoWindow, map.getCenter());
     }
+  });
 
   marker = new google.maps.Marker({
     position:  current,
@@ -78,7 +79,6 @@ function initMap(){
 
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
-  });
 }
 
 function callback(results, status) {

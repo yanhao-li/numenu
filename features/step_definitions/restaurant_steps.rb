@@ -15,7 +15,7 @@ end
 
 Given /^I search for "(.*)"/ do  |restaurant_name|
 	within find("#search") do
-		fill_in("search_box", :with => restaurant_name)
+		fill_in("restaurant_name", :with => restaurant_name)
 	end
 	click_button("search_button")
 end

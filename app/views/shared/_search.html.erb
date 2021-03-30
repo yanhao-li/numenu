@@ -1,6 +1,6 @@
-<form class="flex justify-center w-full" method="get" action="/restaurants">
+<form id="search" class="flex justify-center w-full" method="GET" action="/restaurants">
   <input class="rounded shadow-lg border-0 h-12 mr-2 flex-grow" type="text" placeholder="Search Restaurants" name="restaurant_name" />
-  <button class="h-12 w-12 bg-yellow-400 shadow-lg rounded flex justify-center items-center" type="submit">
+  <button class="h-12 w-12 bg-yellow-400 shadow-lg rounded flex justify-center items-center" id="search_button" type="submit">
     <%= render 'shared/icons/search', classname: "h-8" %>
   </button>
 </form>

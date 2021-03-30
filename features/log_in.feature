@@ -21,4 +21,4 @@ Scenario: log out of an account
 	When I log in with email "email", password "test"
 	And I go to the profile page
 	And I follow "Logout"
-	Then I should see "Login or Signup"
+	Then I should be on the home page

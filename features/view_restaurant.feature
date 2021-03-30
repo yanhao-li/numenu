@@ -11,8 +11,8 @@ Background: restaurants in database
 
 
 Scenario: View the restaurants
-	Given I am on the home page
-	And I follow "View Restaurants"
+	When I log in with email "email", password "test"
+	And I go to the restaurants page
 	Then I should see "Garaje"
 	And I should see "La Salle's"
 	And I should not see "fake restaurant"

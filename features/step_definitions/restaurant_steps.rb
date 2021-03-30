@@ -12,3 +12,10 @@ Given /I submit the restaurant review/ do
 	@user = User.find_by id: 1
 	click_button("Save")
 end
+
+Given /^I search for "(.*)"/ do  |restaurant_name|
+	within find("#search") do
+		fill_in("search_box", :with => restaurant_name)
+	end
+	click_button("search_button")
+end

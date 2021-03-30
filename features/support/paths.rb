@@ -13,6 +13,9 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+    when /the home page/
+      home_index_path
+
     when /the restaurants page/
       restaurants_path
 

@@ -16,7 +16,7 @@
 	<% @restaurant_reviews.each do |r| %>
 		<div>
 			<span>
-				<%= r.restaurant.name %>
+				<%= link_to r.restaurant.name, restaurant_reviews_path(r.restaurant.id) %>
 			</span>
 			<br>
 			<span>
@@ -39,7 +39,7 @@
 	<% @dish_reviews.each do |d| %>
 		<div>
 			<span>
-				<%= d.dish.dish_name %> from <%= d.dish.restaurant.name %>
+				<%= link_to d.dish.dish_name, dish_reviews_path(d.dish.id) %> from <%= link_to d.dish.restaurant.name, restaurant_reviews_path(d.dish.restaurant.id) %>
 			</span>
 			<br>
 			<span>

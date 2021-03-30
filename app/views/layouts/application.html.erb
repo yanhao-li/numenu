@@ -14,7 +14,7 @@
 
   <body>
     <%# show header on all pages except homepage %>
-    <%= render "shared/header" unless current_page?(home_url) %>
+    <%= render "shared/header" unless current_page?(home_index_url) %>
     <%= yield %>
   </body>
 </html>

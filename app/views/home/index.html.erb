@@ -1,23 +1,16 @@
-<div id="welcome">
-  <div class="flex justify-center relative mt-8 mx-5">
-    <%= render 'shared/search' %>
+<div id="home" class="w-screen h-screen relative">
+  <div class="flex absolute justify-center top-8 inset-x-5 z-10">
+    <%= render 'shared/search', search_url: restaurants_path %>
   </div>
-<input id="address" type="textbox" value="type in a restauraunt">
-<input type="button" value="Search" onclick="codeAddress()">
-<%= link_to "View all Restaurants", restaurants_path %>
-<div id='map'></div>
-<div id="home">
-  <div class="flex justify-center relative mt-8 mx-5">
-    <%= render 'shared/search' %>
-  </div>
+  <div id='map'></div>
   <%= render "footer" %>
 </div>
 
 <style>
   
 #map {
-  height: 600px;
-  width: 600px;
+  height: 100%;
+  width: 100%;
   margin-left:auto;
   margin-right:auto;
   text-align:center
@@ -36,6 +29,11 @@ function initMap(){
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
     zoom: 12,
+    mapTypeControl: false,
+    scaleControl: false,
+    fullscreenControl: false,
+    streetViewControl: false,
+    zoomControl: false
   });
 
   infoWindow = new google.maps.InfoWindow();

@@ -72,6 +72,23 @@ function initMap(){
     position:  current,
     map: map
   });
+  var request = {
+    location: current,
+    radius: '300',
+    query: 'restaurant'
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.textSearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      var place = results[i];
+      createMarker(results[i]);
+    }
+  }
 }
 
 /*if location not found*/

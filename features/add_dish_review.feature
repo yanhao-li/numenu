@@ -31,3 +31,23 @@ Scenario: add dish review while not logged in
 	And I select "5" from "Rating"
 	And I press "Save"
 	Then I should not see "loved it"
+
+Scenario: View dish page after writing dish review
+	When I log in with email "email", password "test"
+	And I go to the write dish review page for "tacos" at "Garaje"
+	And I fill in "Review" with "loved it"
+	And I select "5" from "Rating"
+	And I press "Save"
+	And I go to the profile page
+	And I follow "tacos"
+	Then I should see "Write Review"
+
+Scenario: View restaurant page after writing dish review
+	When I log in with email "email", password "test"
+	And I go to the write dish review page for "tacos" at "Garaje"
+	And I fill in "Review" with "loved it"
+	And I select "5" from "Rating"
+	And I press "Save"
+	And I go to the profile page
+	And I follow "Garaje"
+	Then I should see "Write Review"

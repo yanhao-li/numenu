@@ -27,3 +27,13 @@ Scenario: add review while not logged in
 	And I select "5" from "Rating"
 	And I submit the restaurant review
 	Then I should not see "loved it"
+
+Scenario: View restaurant page after writing review
+	When I log in with email "email", password "test"
+	And I go to the write review page for "Garaje"
+	And I fill in "Review" with "loved it"
+	And I select "5" from "Rating"
+	And I press "Save"
+	And I go to the profile page
+	And I follow "Garaje"
+	Then I should see "Write Review"

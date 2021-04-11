@@ -4,18 +4,24 @@ const video = document.createElement("video");
 const canvasElement = document.getElementById("canvas");
 const canvas = canvasElement.getContext("2d");
 
-// Use facingMode: environment to attemt to get the front camera on phones
-navigator.mediaDevices.getUserMedia(
-  { 
-    video: { 
-      facingMode: "environment"
-    } 
-  }).then( stream => {
-  video.srcObject = stream;
-  video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
-  video.play();
-  requestAnimationFrame(tick);
-});
+// Use facingMode: environment to attemt to get the rear camera on phones
+try {
+  console.log('Starting camera...');
+  navigator.mediaDevices.getUserMedia(
+    { 
+      video: { 
+        facingMode: "environment" 
+      }
+    }).then(stream => {
+      video.srcObject = stream;
+      video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+      video.play();
+      requestAnimationFrame(tick);
+  });
+} catch(err) {
+  console.error("webcam error: ");
+  console.log(err);
+}
 
 const tick = () => {
   if (video.readyState === video.HAVE_ENOUGH_DATA) {

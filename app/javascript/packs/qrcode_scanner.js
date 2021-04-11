@@ -41,10 +41,22 @@ const tick = () => {
       drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
       drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
       const url = code.data
-      console.log("url: ", url)
+      if (isValidURL(url)) {
+        window.location.replace(url);
+      }
     }
   }
   requestAnimationFrame(tick);
+}
+
+const isValidURL = (str) => {
+  const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '(?:localhost|numenu-app.herokuapp.com)'+ // domain name
+    '(127.0.0.1|0.0.0.0)'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  return !!pattern.test(str);
 }
 
 const drawLine = (begin, end, color) => {

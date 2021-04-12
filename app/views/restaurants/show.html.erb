@@ -2,7 +2,9 @@
 	<%= @restaurant.name %>
 </h1>
 
-<%= @restaurant.qrcode(request.base_url).html_safe %>
+<div class="text-center flex justify-center">
+	<%= @restaurant.qrcode(request.base_url).html_safe %>
+</div>
 
 <ul class="list-none space-y-6 container mx-auto px-3 py-6">
 	<% @restaurant.dishes.each do |dish| %>

@@ -1,0 +1,19 @@
+<li class="rounded border shadow">
+  <a class="flex items-center p-2" ref="<%= dish_reviews_path(dish) %>"> 
+    <%= image_tag "http://fpoimg.com/100x100", class: "h-full p-2" %>
+    <div>
+      <h2 class="font-medium text-base">
+        <%= dish.dish_name %>
+      </h2>
+      <p class="text-xs text-gray-400">
+        <%= dish.description %>
+      </p>
+      <span class="text-yellow-600 text-sm">
+        $<%= dish.price %>
+      </span>
+      <span class="text-sm">
+        ⭐️ <%= DishReview.average_rating(dish.id) %>
+      </span>
+    </div>
+  </a>
+</li>

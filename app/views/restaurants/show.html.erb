@@ -1,5 +1,7 @@
 <%= link_to 'Back to Restaurants', restaurants_path, :class => 'btn btn-primary' %>
 
+<%= @restaurant.qrcode(request.base_url).html_safe %>
+
 </br>
 Menu items for <%= @restaurant.name %>
 <br>

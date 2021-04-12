@@ -2,6 +2,8 @@
 	<%= @restaurant.name %>
 </h1>
 
+<%= @restaurant.qrcode(request.base_url).html_safe %>
+
 <ul class="list-none space-y-6 container mx-auto px-3 py-6">
 	<% @restaurant.dishes.each do |dish| %>
 		<%= render "dish_card", dish: dish %>

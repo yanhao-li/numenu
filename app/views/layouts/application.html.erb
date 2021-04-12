@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Numenu</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -12,9 +12,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="flex flex-col h-screen">
     <%# show header on all pages except homepage %>
     <%= render "shared/header" unless current_page?(home_url) %>
-    <%= yield %>
+    <div class="flex-grow">
+      <%= yield %>
+    </div>
   </body>
 </html>

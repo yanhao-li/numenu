@@ -1,6 +1,6 @@
 <ul class="list-none space-y-6 container mx-auto px-6 py-6">
   <%= render 'shared/search', search_url: restaurants_path %>
 	<% @restaurants.each do |restaurant| %>
-		<%= render "restaurant_card", restaurant: restaurant %>
+		<%= render "shared/restaurant_card", restaurant: restaurant %>
 	<% end %>
 </ul>

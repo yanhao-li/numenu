@@ -51,11 +51,12 @@ const tick = () => {
 
 const isValidURL = (str) => {
   const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-    '(?:localhost|numenu-app.herokuapp.com)'+ // domain name
-    '(127.0.0.1|0.0.0.0)'+ // OR ip (v4) address
+    '(?:localhost|numenu-app.herokuapp.com'+ // domain name
+    '|127.0.0.1|0.0.0.0)'+ // OR ip (v4) address
     '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
     '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
     '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  console.log(pattern.test(str));
   return !!pattern.test(str);
 }
 

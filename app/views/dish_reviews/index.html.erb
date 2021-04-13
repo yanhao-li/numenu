@@ -1,16 +1,30 @@
-</br>
-Reviews for <%= @dish.restaurant.name %>'s <%= @dish.dish_name %>
-</br>
+<div class="px-3">
+	<h1 class="text-center text-xl font-bold py-5">
+		<%= @dish.restaurant.name %>
+	</h1>
 
-<% @dish.dish_reviews.each do |review| %>
-	<div>
-		<span>
-			<%= review.rating %>
-		</span>
-		<span>
-			<%= review.review %>
-		</span>
-	</div>
-<% end %>
+	<%= render "shared/dish_card", dish: @dish %>
 
-<%= link_to 'Write Review', new_dish_review_path(@dish), :class => 'btn btn-primary' %>
+	<form class="w-full flex flex-col overflow-hidden">
+		<div class="border rounded my-5 py-2">
+			<%= render 'shared/star_rating' %>
+		</div>
+		<input name="review" type="text" class="border rounded border-gray-200" placeholder="Write your reviews here" />
+		<button type="submit" class="bg-yellow-400 text-black font-medium w-full py-3 my-3">
+			Submit
+		</button>
+	</form>
+
+	<ul class="list-none space-y-6 container mx-auto px-3 py-6">
+		<% @dish.dish_reviews.each do |review| %>
+			<li class="list-none">
+				<span>
+					<%= review.rating %>
+				</span>
+				<span>
+					<%= review.review %>
+				</span>
+			</li>
+		<% end %>
+	</ul>
+</div>

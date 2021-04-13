@@ -4,18 +4,24 @@ const video = document.createElement("video");
 const canvasElement = document.getElementById("canvas");
 const canvas = canvasElement.getContext("2d");
 
-// Use facingMode: environment to attemt to get the front camera on phones
-navigator.mediaDevices.getUserMedia(
-  { 
-    video: { 
-      facingMode: "environment"
-    } 
-  }).then( stream => {
-  video.srcObject = stream;
-  video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
-  video.play();
-  requestAnimationFrame(tick);
-});
+// Use facingMode: environment to attemt to get the rear camera on phones
+try {
+  console.log('Starting camera...');
+  navigator.mediaDevices.getUserMedia(
+    { 
+      video: { 
+        facingMode: "environment" 
+      }
+    }).then(stream => {
+      video.srcObject = stream;
+      video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+      video.play();
+      requestAnimationFrame(tick);
+  });
+} catch(err) {
+  console.error("webcam error: ");
+  console.log(err);
+}
 
 const tick = () => {
   if (video.readyState === video.HAVE_ENOUGH_DATA) {
@@ -35,10 +41,22 @@ const tick = () => {
       drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
       drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
       const url = code.data
-      console.log("url: ", url)
+      if (isValidURL(url)) {
+        window.location.replace(url);
+      }
     }
   }
   requestAnimationFrame(tick);
+}
+
+const isValidURL = (str) => {
+  const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '(?:localhost|numenu-app.herokuapp.com)'+ // domain name
+    '(127.0.0.1|0.0.0.0)'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  return !!pattern.test(str);
 }
 
 const drawLine = (begin, end, color) => {

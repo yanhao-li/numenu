@@ -1,19 +1,5 @@
-<div id="search_area">
-  <form id="search" action="/restaurants", method ="GET">
-    <div class="flex justify-center relative mt-8 mx-5">
-    <div class="flex justify-center w-full">
-      <input id="search_box" class="rounded shadow-lg border-0 h-12 mr-2 flex-grow" type="text" placeholder="Search Restaurants" name="restaurant_name"/>
-      <button id="search_button" class="h-12 w-12 bg-yellow-400 shadow-lg rounded flex justify-center items-center">
-      <%= render 'shared/icons/search', classname: "h-8" %>
-      </button>
-    </div>
-    </div>
-  </form>
-</div>
-
-
-</div>
 <ul class="list-none space-y-6 container mx-auto px-6 py-6">
+  <%= render 'shared/search', search_url: restaurants_path %>
 	<% @restaurants.each do |restaurant| %>
 		<%= render "restaurant_card", restaurant: restaurant %>
 	<% end %>

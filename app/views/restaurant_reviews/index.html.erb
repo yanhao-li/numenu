@@ -1,18 +1,20 @@
-<%= link_to 'Back to Restaurants', restaurants_path, :class => 'btn btn-primary' %>
+<div class="px-3">
+	<h1 class="text-center text-xl font-bold py-5">
+		<%= @restaurant.name %>
+	</h1>
 
-</br>
-Reviews for <%= @restaurant.name %>
-</br>
+	<%= render 'shared/review_form', action_path: restaurant_reviews_path(@restaurant) %>
 
-<% @reviews.each do |r| %>
-	<div>
-		<span>
-			<%= r.rating %>
-		</span>
-		<span>
-			<%= r.review %>
-		</span>
-	</div>
-<% end %>
-
-<%= link_to 'Write Review', new_restaurant_review_path(@restaurant), :class => 'btn btn-primary' %>
+	<ul class="list-none space-y-6 container mx-auto px-3 py-6">
+		<% @restaurant.restaurant_reviews.each do |review| %>
+			<li class="list-none">
+				<span>
+					<%= review.rating %>
+				</span>
+				<span>
+					<%= review.review %>
+				</span>
+			</li>
+		<% end %>
+	</ul>
+</div>

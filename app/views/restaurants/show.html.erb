@@ -4,7 +4,7 @@
 
 <div class="text-center flex justify-around items-center">
 	<%= @restaurant.qrcode(request.base_url).html_safe %>
-	<%= link_to 'Write Reviews', restaurant_reviews_path(@restaurant.id), :class => 'bg-yellow-400 px-3 py-2 rounded' %>
+	<%= link_to 'See Reviews', restaurant_reviews_path(@restaurant.id), :class => 'bg-yellow-400 px-3 py-2 rounded' %>
 </div>
 
 <ul class="list-none space-y-6 container mx-auto px-3 py-6">

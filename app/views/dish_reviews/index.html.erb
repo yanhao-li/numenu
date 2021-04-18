@@ -1,18 +1,15 @@
-<%= link_to 'Back to Restaurants', restaurants_path, :class => 'btn btn-primary' %>
+<div class="px-3">
+	<h1 class="text-center text-xl font-bold py-5">
+		<%= @dish.restaurant.name %>
+	</h1>
 
-</br>
-Reviews for <%= @dish.restaurant.name %>'s <%= @dish.dish_name %>
-</br>
+	<%= render "shared/dish_card", dish: @dish %>
 
-<% @dish.dish_reviews.each do |review| %>
-	<div>
-		<span>
-			<%= review.rating %>
-		</span>
-		<span>
-			<%= review.review %>
-		</span>
-	</div>
-<% end %>
+	<%= render 'shared/review_form', action_path: dish_reviews_path(@dish) %>
 
-<%= link_to 'Write Review', new_dish_review_path(@dish), :class => 'btn btn-primary' %>
+	<ul class="list-none space-y-6">
+		<% @dish.dish_reviews.each do |review| %>
+			<%= render 'shared/review_card', review: review %>
+		<% end %>
+	</ul>
+</div>

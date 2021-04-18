@@ -2,14 +2,13 @@
 	<%= @restaurant.name %>
 </h1>
 
-<div class="text-center flex justify-center">
+<div class="text-center flex justify-around items-center">
 	<%= @restaurant.qrcode(request.base_url).html_safe %>
+	<%= link_to 'See Reviews', restaurant_reviews_path(@restaurant.id), :class => 'bg-yellow-400 px-3 py-2 rounded' %>
 </div>
 
 <ul class="list-none space-y-6 container mx-auto px-3 py-6">
 	<% @restaurant.dishes.each do |dish| %>
-		<%= render "dish_card", dish: dish %>
+		<%= render "shared/dish_card", dish: dish %>
 	<% end %>
 </ul>
-
-<%# Write a review for <%= link_to @restaurant.name, restaurant_reviews_path(@restaurant.id), :class => 'btn btn-primary' %>

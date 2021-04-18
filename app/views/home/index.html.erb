@@ -6,125 +6,245 @@
   <%= render "footer" %>
 </div>
 
-<style>
-  
-#map {
-  height: 100%;
-  width: 100%;
-  margin-left:auto;
-  margin-right:auto;
-  text-align:center
-}
+  <!-- Adds style components for side bar with info -->
+  <style>
+    #map {
+      height: 100%;
+      background-color: blue;
+    }
 
-</style>
+  /* adds style components for side bar with info (this was present when I was trying it in a HTML file I think it can be removed for now? test)*/
+    html, body{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-<script>
-let map;
-let infoWindow;
-let geocoder;
+    /* side bar with restauraunt info*/
+    #panel {
+      height: 70%;
+      background-color: white;
+      position: fixed;
+      z-index: 1;
+      overflow-x: hidden;
+      transition: all .2s ease-out;
+    }
 
-function initMap(){
-  geocoder = new google.maps.Geocoder()
+    /*panel functions (apply mostly in html)*/
+    .open {
+      width: 250px;
+    }
 
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 12,
-    mapTypeControl: false,
-    scaleControl: false,
-    fullscreenControl: false,
-    streetViewControl: false,
-    zoomControl: false
-  });
+    /* styling for place details */
+    .pic {
+      width: 100%;
+      height: auto;
+      max-height: 166px;
+      display: block;
+    }
 
-  infoWindow = new google.maps.InfoWindow();
-  /*gets current location when pressed*/
-  const locationButton = document.createElement("button");
-  locationButton.textContent = "Current Location";
-  locationButton.classList.add("custom-map-control-button");
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    .place,
+    p {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
 
-  locationButton.addEventListener("click", () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const current = {
+    .details {
+      color: darkslategrey;
+    }
+
+    a {
+      text-decoration: none;
+      color: cadetblue;
+    }
+  </style>
+
+  <body>
+    <!-- Detailed info appears here -->
+    <div id="panel"></div>
+
+    <!-- Map appears here -->
+    <div id="map"></div>
+  </body>
+
+  <script>
+    /* Requires that you consent to location sharing when prompted by browser. 
+    If "Geolocation permission denied", give permission for browser to locate you. */
+
+    let pos;
+    let map;
+    let bounds;
+    let infoWindow;
+    let currentInfoWindow;
+    let service;
+    let infoPane;
+    function initMap() {
+      // initialize variables
+      bounds = new google.maps.LatLngBounds();
+      infoWindow = new google.maps.InfoWindow;
+      currentInfoWindow = infoWindow;
+      infoPane = document.getElementById('panel');
+
+      // try geolocation
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          pos = {
             lat: position.coords.latitude,
-            lng: position.coords.longitude,
+            lng: position.coords.longitude
           };
-          infoWindow.setPosition(current);
-          infoWindow.setContent("Location found.");
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: pos,
+            zoom: 15
+          });
+          bounds.extend(pos);
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('You are here.');
           infoWindow.open(map);
-          map.setCenter(current);
-        },
-        () => {
-          handleLocationError(true, infoWindow, map.getCenter());
-        }
-      );
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
+          map.setCenter(pos);
+
+          // find restaurants with nearby location
+          getNearbyPlaces(pos);
+        }, () => {
+          // if user has denied permission even though browser supports geolocation
+          handleLocationError(true, infoWindow);
+        });
+      } else {
+        // if browser doesn't support geolocation
+        handleLocationError(false, infoWindow);
+      }
     }
-  });
 
-  marker = new google.maps.Marker({
-    position:  current,
-    map: map
-  });
-  var request = {
-    location: current,
-    radius: '300',
-    query: 'restaurant'
-  };
-
-  service = new google.maps.places.PlacesService(map);
-  service.textSearch(request, callback);
-}
-
-function createMarker(place) {
-  var placeLoc = place.geometry.location;
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location,
-    title: place.name
-  })
-}
-
-  
-function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      var place = results[i];
-      createMarker(results[i]);
-    }
-  }
-}
-
-/*if location not found*/
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(
-    browserHasGeolocation
-      ? "Error: The Geolocation service failed."
-      : "Error: Your browser doesn't support geolocation."
-  );
-  infoWindow.open(map);
-}
-
-// activates when search is pressed
-function codeAddress(){
-  let inputAddress = document.getElementById('address').value;
-
-  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-    if (status == 'OK') {
-      map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
+    // handles a geolocation error
+    function handleLocationError(browserHasGeolocation, infoWindow) {
+      // default location in NYC
+      pos = { lat: 40.758896, lng: -73.985130 };
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: pos,
+        zoom: 15
       });
-    } else {
-      alert('Could not find address ' + status);
+
+      // display InfoWindow at map center
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ?
+        'Geolocation permissions denied. Using default location.' :
+        'Error: Your browser doesn\'t support geolocation.');
+      infoWindow.open(map);
+      currentInfoWindow = infoWindow;
+
+      // call Places Nearby Search based on default location
+      getNearbyPlaces(pos);
     }
-  });   
-}
+
+    // search request
+    function getNearbyPlaces(position) {
+      let request = {
+        location: position,
+        rankBy: google.maps.places.RankBy.DISTANCE,
+        keyword: 'restaurant'
+      };
+
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, nearbyCallback);
+    }
+
+    // handle results
+    function nearbyCallback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        createMarkers(results);
+      }
+    }
+
+    // set markers at each nearby restaraunt
+    function createMarkers(places) {
+      places.forEach(place => {
+        let marker = new google.maps.Marker({
+          position: place.geometry.location,
+          map: map,
+          title: place.name
+        });
+
+
+        google.maps.event.addListener(marker, 'click', () => {
+          let request = {
+            placeId: place.place_id,
+            fields: ['name', 'formatted_address', 'geometry', 'rating',
+              'website', 'photos']
+          };
+
+          /* Only fetch the details of a place when the user clicks on a marker.
+           * If we fetch the details for all place results as soon as we get
+           * the search response, we will hit API rate limits. */
+          service.getDetails(request, (placeResult, status) => {
+            showDetails(placeResult, marker, status)
+          });
+        });
+
+        // Adjust the map bounds to include the location of this marker
+        bounds.extend(place.geometry.location);
+      });
+      /* Once all the markers have been placed, adjust the bounds of the map to
+       * show all the markers within the visible area. */
+      map.fitBounds(bounds);
+    }
+
+    // helps display details about restauraunt
+    function showDetails(placeResult, marker, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        let placeInfowindow = new google.maps.InfoWindow();
+        let rating = "None";
+        if (placeResult.rating) rating = placeResult.rating;
+        placeInfowindow.setContent('<div><strong>' + placeResult.name +
+          '</strong><br>' + 'Rating: ' + rating + '</div>');
+        placeInfowindow.open(marker.map, marker);
+        currentInfoWindow.close();
+        currentInfoWindow = placeInfowindow;
+        showPanel(placeResult);
+      } else {
+        console.log('showDetails failed: ' + status);
+      }
+    }
+
+    function showPanel(placeResult) {
+      // close if infopane alrd open
+      if (infoPane.classList.contains("open")) {
+        infoPane.classList.remove("open");
+      }
+
+      // for the sake of reloading
+      while (infoPane.lastChild) {
+        infoPane.removeChild(infoPane.lastChild);
+      }
+
+      // photo of restaurant (could be useful?)
+      if (placeResult.photos) {
+        let firstPhoto = placeResult.photos[0];
+        let photo = document.createElement('img');
+        photo.classList.add('pic');
+        photo.src = firstPhoto.getUrl();
+        infoPane.appendChild(photo);
+      }
+
+      // add rating/address etc
+      let name = document.createElement('h1');
+      name.classList.add('place');
+      name.textContent = placeResult.name;
+      infoPane.appendChild(name);
+      if (placeResult.rating) {
+        let rating = document.createElement('p');
+        rating.classList.add('details');
+        rating.textContent = `Rating: ${placeResult.rating} \u272e`;
+        infoPane.appendChild(rating);
+      }
+      let address = document.createElement('p');
+      address.classList.add('details');
+      address.textContent = placeResult.formatted_address;
+      infoPane.appendChild(address);
+
+      // open the infoPane
+      infoPane.classList.add("open");
+    }
+  </script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5TAzLwfJrCP9wVteeQkbcwLgDhxhdt3c&libraries=places&callback=initMap">
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5TAzLwfJrCP9wVteeQkbcwLgDhxhdt3c&callback=initMap" async defer></script>

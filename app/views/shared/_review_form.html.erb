@@ -1,4 +1,4 @@
-	<form class="w-full flex flex-col overflow-hidden" method="POST" action="<%= action_path %>">
+	<%= form_with class: "w-full flex flex-col overflow-hidden", method: :post, url: action_path do |form| %>
 		<div class="border rounded my-5 py-2">
 			<%= render 'shared/star_rating' %>
 		</div>
@@ -6,4 +6,4 @@
 		<button type="submit" class="bg-yellow-400 text-black font-medium w-full py-3 my-3">
 			Submit
 		</button>
-	</form>
+	<% end %>
